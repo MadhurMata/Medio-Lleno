@@ -24,6 +24,47 @@ color: white;
 font-size 1rem;
 `
 
+const Wave = styled.div`
+  color: #fde300;
+  position: absolute;
+  left: 1rem;
+  
+  &:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 118px;
+    height: 119px;
+    border-radius: 87%;
+    border-left: solid 9px transparent;
+    border-top: solid 9px transparent;
+    border-right: solid 9px currentColor;
+    border-bottom: solid 9px transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(-90deg);
+  }
+  
+  &:after{
+    content: '';
+    position: absolute;
+    top: -81px;
+    left: 74px;
+    width: 118px;
+    height: 119px;
+    border-radius: 87%;
+    border-left: solid 9px transparent;
+    border-top: solid 9px transparent;
+    border-right: solid 9px currentColor;
+    border-bottom: solid 9px transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(90deg);
+  }
+  `
+
+
+
+
 
 const Slides = (props) => {
   const query = useStaticQuery(graphql`
@@ -47,6 +88,9 @@ const Slides = (props) => {
       <Img
            fixed={query.slidesImg.nodes[props.slideNumber].childImageSharp.fixed}
            alt="Liberty statue image"/>
+      <div style={{position: "relative", height: "3rem"}}>
+      <Wave></Wave>
+      </div>
       <Title>{data.data[props.slideNumber].title}</Title>
       {data.data[props.slideNumber].text.map( (paragraph, key) =>{
         return <Text key={key}>{paragraph}</Text>

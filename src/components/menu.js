@@ -27,18 +27,23 @@ const Nav = styled.nav`
   justify-content: space-evenly;
   text-align: right;
   a {
+    color: #13c1b5;
     font-size: 1rem;
     font-weight: bold;
-    color: #13c1b5;
-    text-decoration: none;
+    text-decoration-color: transparent;
     transition: color 0.3s linear;
+    
+    div {
+      margin-left: 1rem
+    }
 
     @media  {
       font-size: 1.5rem;
     }
 
     &:hover {
-      color: yellow;
+      text-decoration: underline;
+      text-decoration-color: #fde300;
     }
   }
 `
