@@ -10,6 +10,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 3rem;
 `
 
 const Title = styled.h1`
@@ -30,7 +31,7 @@ const Wave = styled.div`
   &:before{
     content: '';
     position: absolute;
-    left: -200px;
+    left: -180px;
     top: 0;
     width: 118px;
     height: 119px;
@@ -46,8 +47,8 @@ const Wave = styled.div`
   &:after{
     content: '';
     position: absolute;
-    top: -81px;
-    left: -126px;
+    top: -80px;
+    left: -105px;
     width: 118px;
     height: 119px;
     border-radius: 87%;

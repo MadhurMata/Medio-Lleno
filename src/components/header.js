@@ -71,7 +71,6 @@ const Header = () => {
                 fluid={query.headerImg.nodes[0].childImageSharp.fluid}
                 alt="Medio Lleno logo"/>
             </Link>
-
           <BurguerMenu ref={node}>
             <Burger open={open} setOpen={setOpen} />
             <Menu open={open} setOpen={setOpen} img={query.headerImg.nodes[0].childImageSharp.fixed}/>

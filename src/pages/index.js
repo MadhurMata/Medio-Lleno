@@ -47,7 +47,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home"/>
-        <div className="slider-circles">
+        <div className="slider-circles" style={{  padding: "95pt 2rem 0"}}>
           <div className={slideNumber === 0 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,0)}}></div>
           <div className={slideNumber === 1 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,1)}}></div>
           <div className={slideNumber === 2 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,2)}}></div>
