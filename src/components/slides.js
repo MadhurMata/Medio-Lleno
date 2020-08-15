@@ -61,10 +61,6 @@ const Wave = styled.div`
   }
   `
 
-
-
-
-
 const Slides = (props) => {
   const query = useStaticQuery(graphql`
     query {

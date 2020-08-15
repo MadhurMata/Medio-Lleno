@@ -2,9 +2,9 @@ import React from "react"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Slides from "../components/Slides"
-import Method from "../components/Method"
-import Contact from "../components/Contact"
+import Slides from "../components/slides"
+import Method from "../components/method"
+import Contact from "../components/contact"
 
 import "../components/slider-component.css"
 

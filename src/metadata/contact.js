@@ -6,5 +6,4 @@ module.exports.contact = {
   email: "hola@mediolleno.com",
   adressFirstLine: "calle xxxxxxx n° xx,",
   adressSecondLine: "28034 Madrid España. n° xx,"
-
 }
