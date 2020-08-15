@@ -64,7 +64,6 @@ const Header = () => {
   `)
   return (
       <HeaderContainer id={"#"}>
-
             <Link to="/" style={{ textDecoration: `none` }}>
               <Img
                 style={{ width: "9rem" }}
@@ -73,7 +72,7 @@ const Header = () => {
             </Link>
           <BurguerMenu ref={node}>
             <Burger open={open} setOpen={setOpen} />
-            <Menu open={open} setOpen={setOpen} img={query.headerImg.nodes[0].childImageSharp.fixed}/>
+            <Menu open={open} setOpen={setOpen} img={query.headerImg.nodes[0].childImageSharp.fluid}/>
           </BurguerMenu>
       </HeaderContainer>
   )

@@ -49,6 +49,7 @@ const Nav = styled.nav`
 `
 
 const Menu = ({ open, setOpen, img }) => {
+  console.log(img)
   const query = useStaticQuery(graphql`
     query {
       navImg: allFile(
@@ -56,7 +57,7 @@ const Menu = ({ open, setOpen, img }) => {
       ) {
         nodes {
           childImageSharp {
-            fixed(width: 30, height: 30) {
+            fixed(width: 20 height: 20) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -71,7 +72,7 @@ const Menu = ({ open, setOpen, img }) => {
     >
       <Img
         fixed={img}
-        style={{ backgroundColor: "green" }}
+        style={{ backgroundColor: "green", width: "9rem" }}
         alt="Medio Lleno logo"
       />
       <Nav>
