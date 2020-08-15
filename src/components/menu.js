@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "@emotion/styled"
 import { bool } from "prop-types"
 import Img from "gatsby-image"
@@ -48,7 +48,7 @@ const Nav = styled.nav`
   }
 `
 
-const Menu = ({ open, img }) => {
+const Menu = ({ open, setOpen, img }) => {
   const query = useStaticQuery(graphql`
     query {
       navImg: allFile(
@@ -64,6 +64,7 @@ const Menu = ({ open, img }) => {
       }
     }
   `)
+
   return (
     <StyledMenu
       style={{ transform: `${open ? "translateY(0)" : "translateY(-100%)"}` }}
@@ -74,19 +75,19 @@ const Menu = ({ open, img }) => {
         alt="Medio Lleno logo"
       />
       <Nav>
-        <a href="/">Home
+        <a href="#" onClick={() => setOpen(!open)}>Home
           <Img
             fixed={query.navImg.nodes[1].childImageSharp.fixed}
             alt="Home logo"
           />
         </a>
-        <a href="/">Metodología
+        <a href="/#method" onClick={() => setOpen(!open)}>Metodología
           <Img
             fixed={query.navImg.nodes[0].childImageSharp.fixed}
             alt="Metodología logo"
           />
         </a>
-        <a href="/">Contacto
+        <a href="/#contact" onClick={() => setOpen(!open)}>Contacto
           <Img
             fixed={query.navImg.nodes[2].childImageSharp.fixed}
             alt="Contacto logo"

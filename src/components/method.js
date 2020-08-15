@@ -66,7 +66,7 @@ const Method = () => {
 `)
 
   return (
-    <div>
+    <div id={"method"} style={{ paddingTop: "108pt", marginTop: "-90pt"}}>
       <Container>
         <Title>{data.methodology.title}</Title>
         <Text>{data.methodology.text}</Text>

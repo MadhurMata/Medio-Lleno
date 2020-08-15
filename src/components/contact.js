@@ -44,7 +44,7 @@ const Contact = () => {
 `
   )
   return (
-    <div>
+    <div id={"contact"} style={{  paddingTop: "108pt", marginTop: "-90pt"}}>
       <Title>{data.contact.title}</Title>
       <Text>{data.contact.text}</Text>
       <Img

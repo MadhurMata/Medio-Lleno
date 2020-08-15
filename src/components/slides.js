@@ -6,11 +6,7 @@ import data from "../metadata/data"
 import Img from "gatsby-image"
 
 const Container = styled.div`
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-padding: 0 1rem;
+
 `
 
 const Title = styled.h1`

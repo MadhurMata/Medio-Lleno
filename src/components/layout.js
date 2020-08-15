@@ -11,6 +11,12 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import styled from "@emotion/styled"
+
+const Main = styled.main`
+  padding-top: 95pt;
+  
+`
 
 const Layout = ({closeHeader, children }) => {
   const data = useStaticQuery(graphql`
@@ -33,7 +39,7 @@ const Layout = ({closeHeader, children }) => {
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
-        <main>{children}</main>
+        <Main>{children}</Main>
         <footer>
           © {new Date().getFullYear()}, Built with
           {` `}

@@ -12,8 +12,12 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 1rem;
-width: auto;
+position: fixed;
+z-index: 99;
+width: 100vw;
+background-color: #13c1b5;
 `
+
 const Header = () => {
   const node = useRef();
   const [open, setOpen] = useState(false);
@@ -55,7 +59,7 @@ const Header = () => {
     }
   `)
   return (
-      <HeaderContainer>
+      <HeaderContainer id={"xxx"}>
           <div>
             <Link to="/" style={{ textDecoration: `none` }}>
               <Img
