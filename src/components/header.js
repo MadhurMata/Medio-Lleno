@@ -18,6 +18,10 @@ width: 100vw;
 background-color: #13c1b5;
 `
 
+const BurguerMenu = styled.div`
+  padding-right: 2rem;
+`
+
 const Header = () => {
   const node = useRef();
   const [open, setOpen] = useState(false);
@@ -50,8 +54,8 @@ const Header = () => {
       ) {
         nodes {
           childImageSharp {
-            fixed(width: 100, height: 100) {
-              ...GatsbyImageSharpFixed
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -59,18 +63,19 @@ const Header = () => {
     }
   `)
   return (
-      <HeaderContainer id={"xxx"}>
-          <div>
+      <HeaderContainer id={"#"}>
+
             <Link to="/" style={{ textDecoration: `none` }}>
               <Img
-                fixed={query.headerImg.nodes[0].childImageSharp.fixed}
+                style={{ width: "9rem" }}
+                fluid={query.headerImg.nodes[0].childImageSharp.fluid}
                 alt="Medio Lleno logo"/>
             </Link>
-          </div>
-          <div ref={node}>
+
+          <BurguerMenu ref={node}>
             <Burger open={open} setOpen={setOpen} />
             <Menu open={open} setOpen={setOpen} img={query.headerImg.nodes[0].childImageSharp.fixed}/>
-          </div>
+          </BurguerMenu>
       </HeaderContainer>
   )
 }

@@ -6,7 +6,10 @@ import data from "../metadata/data"
 import Img from "gatsby-image"
 
 const Container = styled.div`
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const Title = styled.h1`
@@ -23,12 +26,11 @@ font-size 1rem;
 const Wave = styled.div`
   color: #fde300;
   position: absolute;
-  left: 1rem;
   
   &:before{
     content: '';
     position: absolute;
-    left: 0;
+    left: -200px;
     top: 0;
     width: 118px;
     height: 119px;
@@ -45,7 +47,7 @@ const Wave = styled.div`
     content: '';
     position: absolute;
     top: -81px;
-    left: 74px;
+    left: -126px;
     width: 118px;
     height: 119px;
     border-radius: 87%;
