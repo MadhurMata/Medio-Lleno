@@ -5,6 +5,24 @@ import data from "../metadata/data"
 
 import Img from "gatsby-image"
 
+const Desktop = styled.div`
+  display: flex;
+  justify-content: space-evenly;;
+  margin: 0 1rem 0 4rem;
+      @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px) {
+  display: none;
+}
+`
+const Devices = styled.div`
+    @media only screen 
+  and (min-device-width: 813px) 
+  and (max-device-width: 1400px) {
+    display: none;
+}
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -19,6 +37,7 @@ const TextWrapper = styled.div`
 `
 
 const Title = styled.h1`
+  max-width: 60%;
   color: white;
   padding-top: 1rem;
   font-size 1.6rem;
@@ -26,6 +45,7 @@ const Title = styled.h1`
 `
 
 const Text = styled.p`
+ max-width: 60%;
 color: white;
 font-size 0.8rem;
 `
@@ -85,20 +105,42 @@ const Slides = props => {
   `)
   return (
     <>
-      <Container>
-        <Img
-          fixed={query.slidesImg.nodes[props.slideNumber].childImageSharp.fixed}
-          alt="Liberty statue image"
-        />
-        <div style={{ position: "relative", height: "3rem" }}></div>
-      </Container>
-      <TextWrapper>
-        <Wave></Wave>
-        <Title>{data.data[props.slideNumber].title}</Title>
-        {data.data[props.slideNumber].text.map((paragraph, key) => {
-          return <Text key={key}>{paragraph}</Text>
-        })}
-      </TextWrapper>
+      <Devices>
+        <Container>
+          <Img
+            fixed={
+              query.slidesImg.nodes[props.slideNumber].childImageSharp.fixed
+            }
+            alt="Liberty statue image"
+          />
+          <div style={{ position: "relative", height: "3rem" }}></div>
+        </Container>
+        <TextWrapper>
+          <Wave></Wave>
+          <Title>{data.data[props.slideNumber].title}</Title>
+          {data.data[props.slideNumber].text.map((paragraph, key) => {
+            return <Text key={key}>{paragraph}</Text>
+          })}
+        </TextWrapper>
+      </Devices>
+      <Desktop>
+        <Container>
+          <Title>{data.data[props.slideNumber].title}</Title>
+          <Wave></Wave>
+          {data.data[props.slideNumber].text.map((paragraph, key) => {
+            return <Text key={key}>{paragraph}</Text>
+          })}
+        </Container>
+        <Container>
+          <Img
+            fixed={
+              query.slidesImg.nodes[props.slideNumber].childImageSharp.fixed
+            }
+            alt="Liberty statue image"
+          />
+          <div style={{ position: "relative", height: "3rem" }}></div>
+        </Container>
+      </Desktop>
     </>
   )
 }

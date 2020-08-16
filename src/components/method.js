@@ -20,7 +20,7 @@ const Container = styled.div`
   align-items: flex-start;
   padding: 0 2rem 2rem;
 `
-
+//   margin: 0 1rem 0 7rem;
 const Stages = styled.div`
 
 @media only screen 
