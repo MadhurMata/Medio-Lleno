@@ -15,7 +15,7 @@ class IndexPage extends React.Component {
     }
 
   componentDidMount(){
-    const intervalId = setInterval(this.slidesInterval, 3000000);
+    const intervalId = setInterval(this.slidesInterval, 30000);
     this.setState({intervalId: intervalId});
   }
 
@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
     e.nativeEvent.stopImmediatePropagation();
     clearInterval(this.state.intervalId)
     this.setState({slideNumber: slideNumber});
-    const intervalId = setInterval(this.slidesInterval, 3000000, slideNumber);
+    const intervalId = setInterval(this.slidesInterval, 30000, slideNumber);
     this.setState({
       intervalId: intervalId});
 }
