@@ -25,9 +25,11 @@ const Nav = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  text-align: right;
   a {
     color: #13c1b5;
+      display: flex;
+    align-items: center;
+    justify-content: flex-end;
     font-size: 1rem;
     font-weight: bold;
     text-decoration-color: transparent;
@@ -38,7 +40,7 @@ const Nav = styled.nav`
     }
 
     @media  {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
 
     &:hover {
@@ -72,7 +74,7 @@ const Menu = ({ open, setOpen, img }) => {
     >
       <Img
         fixed={img}
-        style={{ backgroundColor: "green", width: "9rem" }}
+        style={{ backgroundColor: "green", width: "7rem", height: "5rem" }}
         alt="Medio Lleno logo"
       />
       <Nav>

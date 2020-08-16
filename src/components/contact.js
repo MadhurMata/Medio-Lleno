@@ -10,25 +10,29 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 3rem;
+  margin-top: -56pt;
+  padding-top: 63pt;
 `
 
 const Title = styled.h1`
 color: white;
-font-size 1.9rem;
-font-weight: 700;
+font-size 1.6rem;
+font-weight: 550;
 text-align: left;
+width: 100%;
+
 `
 
 const Text = styled.p`
 color: white;
-font-size 1rem;
+font-size 0.8rem;
 text-align: left;
 width: 100%;
 `
 const Subtitle = styled.h1`
   color: white;
-  font-size 1rem;
-  font-weight: 700;
+  font-size 0.9rem;
+  font-weight: 550;
   width: 100%;
   text-align: left;
   margin: 0;
@@ -36,7 +40,7 @@ const Subtitle = styled.h1`
 
 const Adress = styled.p`
 color: #fde300;
-font-size 1rem;
+font-size 0.8rem;
 text-align: left;
 width: 100%;
 margin: 0;
@@ -60,10 +64,11 @@ const Contact = () => {
 `
   )
   return (
-    <Container id={"contact"} style={{  paddingTop: "108pt", marginTop: "-90pt"}}>
+    <Container id={"contact"}>
       <Title>{data.contact.title}</Title>
       <Text>{data.contact.text}</Text>
       <Img
+        style={{  margin: "2rem 0"}}
         fixed={query.contactImg.nodes[0].childImageSharp.fixed}
         alt="E.T. image"/>
         <Subtitle>{data.contact.telephoneNumber}</Subtitle>

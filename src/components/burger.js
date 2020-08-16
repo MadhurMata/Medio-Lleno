@@ -7,21 +7,22 @@ const StyledBurger = styled.button`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 3rem;
   background: transparent;
   border: none;
   cursor: pointer;
-  padding-right: 3rem;
   z-index: 1000;
+   padding-top: 1rem;
+
   
   &:focus {
     outline: none;
   }
   
   div {
-    width: 2rem;
-    height: 0.25rem;
+    width: 2.5rem;
+    height: 0.20rem;
     background: white;
     border-radius: 10px;
     transition: all 0.3s linear;

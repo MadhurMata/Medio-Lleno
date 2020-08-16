@@ -11,28 +11,35 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0 3rem;
+  margin-bottom: 1rem;
+`
+
+const TextWrapper = styled.div`
+  padding: 0 3rem;
+    margin-bottom: -55pt;
 `
 
 const Title = styled.h1`
-color: white;
-font-size 1.9rem;
-font-weight: 700;
+  color: white;
+  padding-top: 1rem;
+  font-size 1.6rem;
+  font-weight: 550;
 `
 
 const Text = styled.p`
 color: white;
-font-size 1rem;
+font-size 0.8rem;
 `
 
 const Wave = styled.div`
   color: #fde300;
   position: absolute;
-  
-  &:before{
-    content: '';
+
+  &:before {
+    content: "";
     position: absolute;
-    left: -180px;
-    top: 0;
+    top: -48px;
+    left: -16px;
     width: 118px;
     height: 119px;
     border-radius: 87%;
@@ -43,12 +50,12 @@ const Wave = styled.div`
     -webkit-transform: rotate(45deg);
     transform: rotate(-90deg);
   }
-  
-  &:after{
-    content: '';
+
+  &:after {
+    content: "";
     position: absolute;
-    top: -80px;
-    left: -105px;
+    top: -129px;
+    left: 58px;
     width: 118px;
     height: 119px;
     border-radius: 87%;
@@ -59,39 +66,42 @@ const Wave = styled.div`
     -webkit-transform: rotate(45deg);
     transform: rotate(90deg);
   }
-  `
+`
 
-const Slides = (props) => {
+const Slides = props => {
   const query = useStaticQuery(graphql`
     query {
-    slidesImg: allFile(
-      filter: { relativePath: {}, relativeDirectory: { eq: "images/slides" } }
-    ) {
-      nodes {
-        childImageSharp {
-          fixed(width: 200, height: 200) {
-            ...GatsbyImageSharpFixed
+      slidesImg: allFile(
+        filter: { relativePath: {}, relativeDirectory: { eq: "images/slides" } }
+      ) {
+        nodes {
+          childImageSharp {
+            fixed(width: 200, height: 200) {
+              ...GatsbyImageSharpFixed
+            }
           }
         }
       }
     }
-  }
-`
-)
+  `)
   return (
-    <Container>
-      <Img
-           fixed={query.slidesImg.nodes[props.slideNumber].childImageSharp.fixed}
-           alt="Liberty statue image"/>
-      <div style={{position: "relative", height: "3rem"}}>
-      <Wave></Wave>
-      </div>
-      <Title>{data.data[props.slideNumber].title}</Title>
-      {data.data[props.slideNumber].text.map( (paragraph, key) =>{
-        return <Text key={key}>{paragraph}</Text>
-      })}
-    </Container>
+    <>
+      <Container>
+        <Img
+          fixed={query.slidesImg.nodes[props.slideNumber].childImageSharp.fixed}
+          alt="Liberty statue image"
+        />
+        <div style={{ position: "relative", height: "3rem" }}></div>
+      </Container>
+      <TextWrapper>
+        <Wave></Wave>
+        <Title>{data.data[props.slideNumber].title}</Title>
+        {data.data[props.slideNumber].text.map((paragraph, key) => {
+          return <Text key={key}>{paragraph}</Text>
+        })}
+      </TextWrapper>
+    </>
   )
 }
 
-export default Slides;
+export default Slides

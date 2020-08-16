@@ -15,7 +15,7 @@ class IndexPage extends React.Component {
     }
 
   componentDidMount(){
-    const intervalId = setInterval(this.slidesInterval, 1000000000);
+    const intervalId = setInterval(this.slidesInterval, 3000000);
     this.setState({intervalId: intervalId});
   }
 
@@ -32,7 +32,7 @@ class IndexPage extends React.Component {
     e.nativeEvent.stopImmediatePropagation();
     clearInterval(this.state.intervalId)
     this.setState({slideNumber: slideNumber});
-    const intervalId = setInterval(this.slidesInterval, 1000000000, slideNumber);
+    const intervalId = setInterval(this.slidesInterval, 3000000, slideNumber);
     this.setState({
       intervalId: intervalId});
 }
@@ -47,7 +47,7 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home"/>
-        <div className="slider-circles" style={{  padding: "95pt 2rem 0"}}>
+        <div className="slider-circles" style={{  paddingTop: "70pt", marginLeft: "15rem"}}>
           <div className={slideNumber === 0 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,0)}}></div>
           <div className={slideNumber === 1 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,1)}}></div>
           <div className={slideNumber === 2 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,2)}}></div>

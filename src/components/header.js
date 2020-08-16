@@ -11,7 +11,6 @@ const HeaderContainer = styled.header`
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 1rem;
 position: fixed;
 z-index: 99;
 width: 100vw;
@@ -19,6 +18,7 @@ background-color: #13c1b5;
 `
 
 const BurguerMenu = styled.div`
+  padding-right: 2rem;
 `
 
 const Header = () => {
@@ -53,7 +53,7 @@ const Header = () => {
       ) {
         nodes {
           childImageSharp {
-            fluid {
+            fluid(maxWidth: 200 maxHeight: 100) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -65,7 +65,7 @@ const Header = () => {
       <HeaderContainer id={"#"}>
             <Link to="/" style={{ textDecoration: `none` }}>
               <Img
-                style={{ width: "9rem" }}
+                style={{   width: "10rem", height: "5rem" }}
                 fluid={query.headerImg.nodes[0].childImageSharp.fluid}
                 alt="Medio Lleno logo"/>
             </Link>

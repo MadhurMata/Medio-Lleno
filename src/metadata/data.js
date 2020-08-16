@@ -11,9 +11,7 @@ module.exports.data = [
     title:
       "Por eso, hemos desarrollado nuesto propio modelo.",
     text: [
-      "Hemos vuelto al origen. Al principal punto de contacto entre una marca y la personas. Lo que de verdad define su importancia en la sociedad.",
-      "Los productos y servicios que ofrecen.",
-      "Y los tratamos de una forma muy especial."
+      "Hemos vuelto al origen. Al principal punto de contacto entre una marca y la personas. Lo que de verdad define su importancia en la sociedad.", "Los productos y servicios que ofrecen.", "Y los tratamos de una forma muy especial."
     ]
   },
   {

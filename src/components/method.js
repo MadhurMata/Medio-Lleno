@@ -9,14 +9,16 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: -56pt;
+  padding-top: 63pt;
 `
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-  padding: 0 3rem;
+  align-items: flex-start;
+  padding: 0 3rem 2rem;
 `
 
 const Stages = styled.div`
@@ -24,35 +26,48 @@ const Stages = styled.div`
   and (min-device-width: 320px) 
   and (max-device-width: 812px)
   and (-webkit-min-device-pixel-ratio: 2) {
-  width: 420px;
+  max-width: 420px;
   display: flex;
   flex-direction: column;
   align-items: center;
+    padding: 0 3rem;
+
 }
 `
+const StageContainer = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`
+
 const SubStageContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  width: 32vw;
+  width: 40%;
+    align-items: flex-start;
 `
 
-const StageContainer = styled.div`
+const SubStageContainer2 = styled.div`
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  width: 40%;
 `
+
 
 const Title = styled.h1`
   color: white;
-  font-size 1.9rem;
-  font-weight: 700;
+  font-size: 1.7rem;
+  font-weight: 550;
 `
 const Subtitle = styled.h1`
   color: white;
-  font-size 1rem;
-  font-weight: 700;
+  font-size 0.9rem;
+  font-weight: 550;
 `
 
 const Text = styled.p`
@@ -93,7 +108,7 @@ const Method = () => {
 `)
 
   return (
-    <Wrapper id={"method"} style={{ paddingTop: "108pt", marginTop: "-90pt"}}>
+    <Wrapper id={"method"}>
       <Container>
         <Title>{data.methodology.title}</Title>
         <Text>{data.methodology.text}</Text>
@@ -105,7 +120,6 @@ const Method = () => {
             fixed={query.methodImg.nodes[0].childImageSharp.fixed}
             alt="Icono de una pantalla ordenador con graficos"
           />
-          <div style={{width:"3rem"}}></div>
           <SubStageContainer>
             <Subtitle>{data.methodology.stages[0].title}</Subtitle>
             <Text>{data.methodology.stages[0].text}</Text>
@@ -113,11 +127,10 @@ const Method = () => {
         </StageContainer>
         <Arrow>{arrowRight}</Arrow>
         <StageContainer>
-          <SubStageContainer>
+          <SubStageContainer2>
             <Subtitle>{data.methodology.stages[1].title}</Subtitle>
-            <Text style={{textAlign:"right"}}>{data.methodology.stages[1].text}</Text>
-          </SubStageContainer>
-          <div style={{width:"3rem"}}></div>
+            <Text>{data.methodology.stages[1].text}</Text>
+          </SubStageContainer2>
           <Img
             fixed={query.methodImg.nodes[1].childImageSharp.fixed}
             alt="Icono de una pantalla ordenador con graficos"
@@ -129,7 +142,6 @@ const Method = () => {
             fixed={query.methodImg.nodes[2].childImageSharp.fixed}
             alt="Icono de una pantalla ordenador con graficos"
           />
-          <div style={{width:"3rem"}}></div>
           <SubStageContainer>
             <Subtitle>{data.methodology.stages[2].title}</Subtitle>
             <Text>{data.methodology.stages[2].text}</Text>
@@ -140,9 +152,8 @@ const Method = () => {
 
           <SubStageContainer>
             <Subtitle>{data.methodology.stages[3].title}</Subtitle>
-            <Text style={{textAlign:"right"}}>{data.methodology.stages[3].text}</Text>
+            <Text>{data.methodology.stages[3].text}</Text>
           </SubStageContainer>
-          <div style={{width:"3rem"}}></div>
           <Img
             fixed={query.methodImg.nodes[3].childImageSharp.fixed}
             alt="Icono de una pantalla ordenador con graficos"
@@ -154,7 +165,6 @@ const Method = () => {
             fixed={query.methodImg.nodes[4].childImageSharp.fixed}
             alt="Icono de una pantalla ordenador con graficos"
           />
-          <div style={{width:"3rem"}}></div>
           <SubStageContainer>
             <Subtitle>{data.methodology.stages[4].title}</Subtitle>
             <Text>{data.methodology.stages[4].text}</Text>
@@ -164,9 +174,8 @@ const Method = () => {
         <StageContainer>
           <SubStageContainer>
             <Subtitle>{data.methodology.stages[5].title}</Subtitle>
-            <Text style={{textAlign:"right"}}>{data.methodology.stages[5].text}</Text>
+            <Text>{data.methodology.stages[5].text}</Text>
           </SubStageContainer>
-          <div style={{width:"3rem"}}></div>
           <Img
             fixed={query.methodImg.nodes[5].childImageSharp.fixed}
             alt="Icono de una pantalla ordenador con graficos"
