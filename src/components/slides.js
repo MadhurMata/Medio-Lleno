@@ -10,13 +10,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 3rem;
   margin-bottom: 1rem;
 `
 
 const TextWrapper = styled.div`
-  padding: 0 3rem;
-    margin-bottom: -55pt;
+  margin: 0 2rem;
+  margin-bottom: -55pt;
 `
 
 const Title = styled.h1`

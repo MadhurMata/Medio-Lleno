@@ -18,10 +18,11 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 3rem 2rem;
+  padding: 0 2rem 2rem;
 `
 
 const Stages = styled.div`
+
 @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 812px)
@@ -30,14 +31,14 @@ const Stages = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-    padding: 0 3rem;
-
 }
 `
 const StageContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  margin: 0 1rem;
+
 `
 
 const SubStageContainer = styled.div`
@@ -66,8 +67,9 @@ const Title = styled.h1`
 `
 const Subtitle = styled.h1`
   color: white;
-  font-size 0.9rem;
+  font-size 0.8rem;
   font-weight: 550;
+  margin-bottom: 1rem;
 `
 
 const Text = styled.p`

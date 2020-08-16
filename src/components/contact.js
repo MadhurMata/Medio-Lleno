@@ -9,7 +9,7 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 3rem;
+  margin: 0 2rem;
   margin-top: -56pt;
   padding-top: 63pt;
 `

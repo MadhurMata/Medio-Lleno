@@ -36,7 +36,7 @@ const Footer = () => {
   `)
   return (
     <Container>
-      {query.footerImg.nodes.map((node, key)=>{
+      {query.footerImg.nodes.reverse().map((node, key)=>{
         return (
           <ImgContainer>
             <Link key={key} to="/" style={{ textDecoration: `none` }}>
