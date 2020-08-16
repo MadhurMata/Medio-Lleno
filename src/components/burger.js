@@ -12,7 +12,7 @@ const StyledBurger = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 0;
+  padding-right: 3rem;
   z-index: 1000;
   
   &:focus {

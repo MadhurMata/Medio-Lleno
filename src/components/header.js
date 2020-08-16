@@ -19,7 +19,6 @@ background-color: #13c1b5;
 `
 
 const BurguerMenu = styled.div`
-  padding-right: 2rem;
 `
 
 const Header = () => {

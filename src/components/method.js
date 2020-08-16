@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 import data from "../metadata/methodology"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
+import { arrayOf } from "prop-types"
 
 const Wrapper = styled.div`
   display: flex;
@@ -15,7 +16,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 3rem;
 `
 
 const Stages = styled.div`
@@ -66,18 +67,13 @@ const Arrow = styled.div`
 const ArrowLeft = styled.div`
   margin-right: 4rem;
   width: 300px;
-  transform: rotateY(180deg);
-
+  transform: rotateY(180deg); 
 `
 
 const Method = () => {
   const arrowRight = <svg viewBox="-10 0 500 110">
     <path
-      d="M 0 0, Q 0 50 50 50, H300,M 300   50, Q 350 50 350 100,M 351 100,L 330 85,M 349 100, L 370 85" fill="transparent" stroke="#fde300"   strokeWidth="3"/>
-  </svg>
-  const arrowLeft = <svg viewBox="-10 0 500 110">
-    <path
-      d="M 0 0, Q 0 50 50 50, H300,M 300   50, Q 350 50 350 100,M 351 100,L 330 85,M 349 100, L 370 85" fill="transparent" stroke="#fde300"   strokeWidth="3"/>
+      d="M 0 0, Q 0 50 50 50, H300,M 300   50, Q 350 50 350 100,M 351 102,L 330 85,M 349 102, L 369 85" fill="transparent" stroke="#fde300"   strokeWidth="3"/>
   </svg>
 
   const query = useStaticQuery(graphql`
@@ -127,7 +123,7 @@ const Method = () => {
             alt="Icono de una pantalla ordenador con graficos"
           />
         </StageContainer>
-        <ArrowLeft>{arrowLeft}</ArrowLeft>
+        <ArrowLeft>{arrowRight}</ArrowLeft>
         <StageContainer>
           <Img
             fixed={query.methodImg.nodes[2].childImageSharp.fixed}
@@ -138,7 +134,10 @@ const Method = () => {
             <Subtitle>{data.methodology.stages[2].title}</Subtitle>
             <Text>{data.methodology.stages[2].text}</Text>
           </SubStageContainer>
-        </StageContainer><Arrow>{arrowRight}</Arrow><StageContainer>
+        </StageContainer>
+        <Arrow>{arrowRight}</Arrow>
+        <StageContainer>
+
           <SubStageContainer>
             <Subtitle>{data.methodology.stages[3].title}</Subtitle>
             <Text style={{textAlign:"right"}}>{data.methodology.stages[3].text}</Text>
@@ -149,7 +148,7 @@ const Method = () => {
             alt="Icono de una pantalla ordenador con graficos"
           />
         </StageContainer>
-        <ArrowLeft>{arrowLeft}</ArrowLeft>
+        <ArrowLeft>{arrowRight}</ArrowLeft>
         <StageContainer>
           <Img
             fixed={query.methodImg.nodes[4].childImageSharp.fixed}
