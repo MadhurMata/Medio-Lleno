@@ -11,6 +11,7 @@ const Container = styled.div`
   justify-content: center;
   background-color: white;
   margin-top: 2rem;
+  z-index: 100;
 `
 
 const ImgContainer = styled.div`
@@ -26,7 +27,7 @@ const Footer = () => {
       ) {
         nodes {
           childImageSharp {
-            fixed(width: 30, height: 30) {
+            fixed(width: 40, height: 30) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -36,7 +37,7 @@ const Footer = () => {
   `)
   return (
     <Container>
-      {query.footerImg.nodes.reverse().map((node, key)=>{
+      {query.footerImg.nodes.map((node, key)=>{
         return (
           <ImgContainer>
             <Link key={key} to="/" style={{ textDecoration: `none` }}>
@@ -47,6 +48,7 @@ const Footer = () => {
           </ImgContainer>
         )
       })}
+      <div id="madhur"></div>
     </Container>
   )
 }

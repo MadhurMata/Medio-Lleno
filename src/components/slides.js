@@ -126,7 +126,6 @@ const Slides = props => {
       <Desktop>
         <Container>
           <Title>{data.data[props.slideNumber].title}</Title>
-          <Wave></Wave>
           {data.data[props.slideNumber].text.map((paragraph, key) => {
             return <Text key={key}>{paragraph}</Text>
           })}

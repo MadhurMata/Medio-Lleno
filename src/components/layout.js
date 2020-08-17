@@ -26,7 +26,7 @@ const Layout = ({closeHeader, children }) => {
     <Wrapper>
       <Header closeHeader={closeHeader}/>
       <main>{children}</main>
-      <Footer/>
+      <Footer id={"footer"} name={"footer"}/>
     </Wrapper>
   )
 }

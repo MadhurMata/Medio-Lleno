@@ -51,7 +51,6 @@ const Nav = styled.nav`
 `
 
 const Menu = ({ open, setOpen, img }) => {
-  console.log(img)
   const query = useStaticQuery(graphql`
     query {
       navImg: allFile(
