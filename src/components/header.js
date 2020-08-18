@@ -7,18 +7,49 @@ import React, { useEffect, useRef, useState } from "react"
 import Burger from "./burger"
 import Menu from "./menu"
 
+const Desktop = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  margin-right: 5rem;
+  
+      @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 899px) {
+  display: none;
+}
+`
+const Devices = styled.div`
+    @media only screen 
+  and (min-device-width: 900px) {
+    display: none;
+}
+`
 const HeaderContainer = styled.header`
 display: flex;
 justify-content: space-between;
 align-items: center;
 position: fixed;
-z-index: 99;
+z-index: 112;
 width: 100vw;
 background-color: #13c1b5;
 `
 
 const BurguerMenu = styled.div`
   padding-right: 2rem;
+`
+
+const NavBar = styled.ul`
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+  width: 19rem;
+  
+  a {
+  color: white;
+  text-decoration: none;
+  }
 `
 
 const Header = () => {
@@ -62,18 +93,32 @@ const Header = () => {
     }
   `)
   return (
-      <HeaderContainer id={"#"}>
-            <Link to="/" style={{ textDecoration: `none` }}>
-              <Img
-                style={{   width: "10rem", height: "5rem" }}
-                fluid={query.headerImg.nodes[0].childImageSharp.fluid}
-                alt="Medio Lleno logo"/>
-            </Link>
-          <BurguerMenu ref={node}>
-            <Burger open={open} setOpen={setOpen} />
-            <Menu open={open} setOpen={setOpen} img={query.headerImg.nodes[0].childImageSharp.fluid}/>
-          </BurguerMenu>
-      </HeaderContainer>
+      <>
+
+        <HeaderContainer id={"#"}>
+          <Link to="/" style={{ textDecoration: `none` }}>
+            <Img
+              style={{   width: "10rem", height: "5rem" }}
+              fluid={query.headerImg.nodes[0].childImageSharp.fluid}
+              alt="Medio Lleno logo"/>
+          </Link>
+          <Devices>
+            <BurguerMenu ref={node}>
+              <Burger open={open} setOpen={setOpen} />
+              <Menu open={open} setOpen={setOpen} img={query.headerImg.nodes[1].childImageSharp.fluid}/>
+            </BurguerMenu>
+          </Devices>
+          <Desktop>
+            <NavBar>
+              <li><a href="#">Home</a></li>
+              <li><a href="/#method">Metodología</a></li>
+              <li><a href="/#contact">Contacto</a></li>
+            </NavBar>
+          </Desktop>
+        </HeaderContainer>
+
+
+      </>
   )
 }
 

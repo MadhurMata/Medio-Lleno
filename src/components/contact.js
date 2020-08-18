@@ -4,6 +4,23 @@ import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
+const Desktop = styled.div`
+  display: flex;
+  justify-content: space-evenly;;
+  margin: 0 1rem 0 4rem;
+      @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 899px) {
+  display: none;
+}
+`
+const Devices = styled.div`
+    @media only screen 
+  and (min-device-width: 900px) {
+    display: none;
+}
+`
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -64,18 +81,38 @@ const Contact = () => {
 `
   )
   return (
-    <Container id={"contact"}>
-      <Title>{data.contact.title}</Title>
-      <Text>{data.contact.text}</Text>
-      <Img
-        style={{  margin: "2rem 0"}}
-        fixed={query.contactImg.nodes[0].childImageSharp.fixed}
-        alt="E.T. image"/>
-        <Subtitle>{data.contact.telephoneNumber}</Subtitle>
-        <Subtitle>{data.contact.email}</Subtitle>
-        <Adress>{data.contact.adressFirstLine}</Adress>
-        <Adress>{data.contact.adressSecondLine}</Adress>
-    </Container>
+    <>
+    <Devices>
+      <Container id={"contact"}>
+        <Title>{data.contact.title}</Title>
+        <Text>{data.contact.text}</Text>
+        <Img
+          style={{  margin: "2rem 0"}}
+          fixed={query.contactImg.nodes[0].childImageSharp.fixed}
+          alt="E.T. image"/>
+          <Subtitle>{data.contact.telephoneNumber}</Subtitle>
+          <Subtitle>{data.contact.email}</Subtitle>
+          <Adress>{data.contact.adressFirstLine}</Adress>
+          <Adress>{data.contact.adressSecondLine}</Adress>
+      </Container>
+    </Devices>
+      <Desktop>
+        <Container id={"contact"}>
+          <Title>{data.contact.title}</Title>
+          <Text>{data.contact.text}</Text>
+          <Subtitle>{data.contact.telephoneNumber}</Subtitle>
+          <Subtitle>{data.contact.email}</Subtitle>
+          <Adress>{data.contact.adressFirstLine}</Adress>
+          <Adress>{data.contact.adressSecondLine}</Adress>
+        </Container>
+        <Container>
+          <Img
+            style={{  margin: "2rem 0"}}
+            fixed={query.contactImg.nodes[0].childImageSharp.fixed}
+            alt="E.T. image"/>
+        </Container>
+      </Desktop>
+    </>
   )
 }
 

@@ -11,14 +11,13 @@ const Desktop = styled.div`
   margin: 0 1rem 0 4rem;
       @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 812px) {
+  and (max-device-width: 899px) {
   display: none;
 }
 `
 const Devices = styled.div`
     @media only screen 
-  and (min-device-width: 813px) 
-  and (max-device-width: 1400px) {
+  and (min-device-width: 900px) {
     display: none;
 }
 `

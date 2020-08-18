@@ -3,7 +3,6 @@ import styled from "@emotion/styled"
 import data from "../metadata/methodology"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
-import { arrayOf } from "prop-types"
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,12 +19,11 @@ const Container = styled.div`
   align-items: flex-start;
   padding: 0 2rem 2rem;
 `
-//   margin: 0 1rem 0 7rem;
 const Stages = styled.div`
 
 @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 812px)
+  and (max-device-width: 899px)
   and (-webkit-min-device-pixel-ratio: 2) {
   max-width: 420px;
   display: flex;
@@ -37,8 +35,6 @@ const StageContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  margin: 0 1rem;
-
 `
 
 const SubStageContainer = styled.div`

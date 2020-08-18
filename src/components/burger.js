@@ -12,7 +12,7 @@ const StyledBurger = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 112;
    padding-top: 1rem;
 
   

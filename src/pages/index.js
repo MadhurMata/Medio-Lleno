@@ -8,8 +8,6 @@ import Contact from "../components/contact"
 
 import "../components/slider-component.css"
 import styled from "@emotion/styled"
-import { graphql, Link, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 
 import emailImg from '../images/footer/01-Mesa de trabajo 5.png'
 import instagramImg from '../images/footer/02-Mesa de trabajo 5 copia.png'
@@ -23,7 +21,11 @@ const SideBar = styled.div`
   top: 0;
   right: 0;
   overflow-x: hidden;
-  padding-top: 10rem;  
+        @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 899px) {
+  display: none;
+}
 `
 
 const Arrow = styled.i`
@@ -38,7 +40,7 @@ const Arrow = styled.i`
   border-style: solid;
   margin: 10px;
   transform: rotate(-45deg);
-  z-index: 1000;
+  z-index: 111;
   
   &:before {
     content: "";
@@ -69,11 +71,6 @@ const ImgContainer = styled.ul`
   margin: 0 0.5rem;
   z-index: 111;
   list-style-type: none;
-  
-  &:nth-child(3) {
-   margin-bottom: 0;
-   background-color: red;
- }
 `
 
 const Container = styled.div`
@@ -175,7 +172,7 @@ class IndexPage extends React.Component {
             ) : null }
         </SideBar>
         <Content>
-          <div className="slider-circles" style={{  paddingTop: "70pt", marginLeft: "15rem"}}>
+          <div className="slider-circles" style={{  paddingTop: "70pt", marginLeft: "80%"}}>
             <div className={slideNumber === 0 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,0)}}></div>
             <div className={slideNumber === 1 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,1)}}></div>
             <div className={slideNumber === 2 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,2)}}></div>

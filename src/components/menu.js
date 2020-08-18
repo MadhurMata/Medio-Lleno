@@ -73,7 +73,7 @@ const Menu = ({ open, setOpen, img }) => {
     >
       <Img
         fixed={img}
-        style={{ backgroundColor: "green", width: "7rem", height: "5rem" }}
+        style={{width: "8rem", height: "4rem", margin: "1rem" }}
         alt="Medio Lleno logo"
       />
       <Nav>
