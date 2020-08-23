@@ -2,7 +2,10 @@ import React, { useState } from "react"
 import styled from "@emotion/styled"
 import { bool } from "prop-types"
 import Img from "gatsby-image"
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { Link, animateScroll as scroll } from "react-scroll";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
 
 const StyledMenu = styled.div`
   position: absolute;
@@ -77,24 +80,24 @@ const Menu = ({ open, setOpen, img }) => {
         alt="Medio Lleno logo"
       />
       <Nav>
-        <a href="#" onClick={() => setOpen(!open)}>Home
+        <Link to="hey" offset={-100} onClick={() => setOpen(!open)}>Home
           <Img
             fixed={query.navImg.nodes[1].childImageSharp.fixed}
             alt="Home logo"
           />
-        </a>
-        <a href="/#method" onClick={() => setOpen(!open)}>Metodología
+        </Link>
+        <Link to="method" offset={-100} onClick={() => setOpen(!open)}>Metodología
           <Img
             fixed={query.navImg.nodes[0].childImageSharp.fixed}
             alt="Metodología logo"
           />
-        </a>
-        <a href="/#contact" onClick={() => setOpen(!open)}>Contacto
+        </Link>
+        <Link to="contact" offset={-100} onClick={() => setOpen(!open)}>Contacto
           <Img
             fixed={query.navImg.nodes[2].childImageSharp.fixed}
             alt="Contacto logo"
           />
-        </a>
+        </Link>
       </Nav>
     </StyledMenu>
   )

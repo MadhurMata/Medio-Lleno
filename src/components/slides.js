@@ -9,13 +9,14 @@ const Desktop = styled.div`
   display: flex;
   justify-content: space-evenly;;
   margin: 0 1rem 0 4rem;
+  max-width: 650px;
       @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 899px) {
   display: none;
 }
 `
-const Devices = styled.div`
+const Devices = styled.div` 
     @media only screen 
   and (min-device-width: 900px) {
     display: none;
@@ -32,11 +33,9 @@ const Container = styled.div`
 
 const TextWrapper = styled.div`
   margin: 0 2rem;
-  margin-bottom: -55pt;
 `
 
 const Title = styled.h1`
-  max-width: 60%;
   color: white;
   padding-top: 1rem;
   font-size 1.6rem;
@@ -44,7 +43,6 @@ const Title = styled.h1`
 `
 
 const Text = styled.p`
- max-width: 60%;
 color: white;
 font-size 0.8rem;
 `
@@ -103,7 +101,7 @@ const Slides = props => {
     }
   `)
   return (
-    <>
+    <div style={{display: "flex", justifyContent: "center"}}>
       <Devices>
         <Container>
           <Img
@@ -123,7 +121,7 @@ const Slides = props => {
         </TextWrapper>
       </Devices>
       <Desktop>
-        <Container>
+        <Container style={{  maxWidth: "80%" }}>
           <Title>{data.data[props.slideNumber].title}</Title>
           {data.data[props.slideNumber].text.map((paragraph, key) => {
             return <Text key={key}>{paragraph}</Text>
@@ -139,7 +137,7 @@ const Slides = props => {
           <div style={{ position: "relative", height: "3rem" }}></div>
         </Container>
       </Desktop>
-    </>
+    </div>
   )
 }
 

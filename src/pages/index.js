@@ -36,9 +36,9 @@ const Arrow = styled.i`
   box-sizing: border-box;
   width: 20px;
   height: 20px;
-  border-width: 3px 3px 0 0;
+  border-width: 2px 2px 0 0;
   border-style: solid;
-  margin: 10px;
+  margin: 12px;
   transform: rotate(-45deg);
   z-index: 111;
   
@@ -48,7 +48,7 @@ const Arrow = styled.i`
     right: 0px;
     top: -2px;
     position: absolute;
-    height: 3px;
+    height: 2px;
     box-shadow: inset 0 0 0 32px;
     transform: rotate(-45deg);
     width: 5rem;
@@ -63,7 +63,10 @@ const Arrow = styled.i`
 `
 
 const Content = styled.div`
-  margin-right: 5rem;
+    @media only screen 
+  and (min-device-width: 900px) {
+    margin-right: 5rem;
+}
   padding: 0px 10px;
 `
 
@@ -89,6 +92,23 @@ const Image = styled.img`
   color: yellow;
 `
 
+const MainMessage = styled.div`
+  margin-top: 8rem;
+  margin-left: 4rem;
+  color: white;
+  
+  h1 {
+    line-height: 4rem;
+    font-size: 3rem;
+  }
+  
+        @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 899px) {
+  margin-left: 2rem;
+}
+`
+
 class IndexPage extends React.Component {
     state = {
       intervalId: 0,
@@ -97,7 +117,7 @@ class IndexPage extends React.Component {
     }
 
   componentDidMount(){
-    window.addEventListener('scroll', this.trackScrolling);
+    // window.addEventListener('scroll', this.trackScrolling);
     const intervalId = setInterval(this.slidesInterval, 30000);
     this.setState({intervalId: intervalId});
   }
@@ -119,7 +139,9 @@ class IndexPage extends React.Component {
   }
 
   trackScrolling = () => {
-    const wrappedElement = document.getElementById('madhur');
+    const wrappedElement = document.getElementById('ttt');
+    console.log("media on scroll function", this.state.isMediaShown);
+    console.log("media on scroll function", this.state.isMediaShown);
     if (this.isBottom(wrappedElement)) {
       this.setState({
         isMediaShown: false
@@ -151,12 +173,13 @@ class IndexPage extends React.Component {
 
 
   render() {
+    console.log("isMediaShown", this.state.isMediaShown);
     const { slideNumber, isMediaShown  } = this.state
     const media = ["Email", "Instagram", "LinkedIn"]
 
     return (
       <Layout>
-        <SEO title="Home"/>
+        <SEO/>
         <SideBar>
           {isMediaShown ?
             (
@@ -172,7 +195,10 @@ class IndexPage extends React.Component {
             ) : null }
         </SideBar>
         <Content>
-          <div className="slider-circles" style={{  paddingTop: "70pt", marginLeft: "80%"}}>
+          <MainMessage id={"hey"} name={"hey"}>
+              <h1>Bien Hecho<br/>es mejor que<br/>bien dicho.</h1>
+          </MainMessage>
+          <div className="slider-circles" style={{  marginTop:"2rem", marginLeft: "80%"}}>
             <div className={slideNumber === 0 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,0)}}></div>
             <div className={slideNumber === 1 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,1)}}></div>
             <div className={slideNumber === 2 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,2)}}></div>

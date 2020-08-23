@@ -8,6 +8,7 @@ const Desktop = styled.div`
   display: flex;
   justify-content: space-evenly;;
   margin: 0 1rem 0 4rem;
+  max-width: 650px;
       @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 899px) {
@@ -27,8 +28,6 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   margin: 0 2rem;
-  margin-top: -56pt;
-  padding-top: 63pt;
 `
 
 const Title = styled.h1`
@@ -81,9 +80,9 @@ const Contact = () => {
 `
   )
   return (
-    <>
+    <div id={"contact"} name={"contact"} style={{display: "flex", justifyContent: "center"}}>
     <Devices>
-      <Container id={"contact"}>
+      <Container>
         <Title>{data.contact.title}</Title>
         <Text>{data.contact.text}</Text>
         <Img
@@ -97,7 +96,7 @@ const Contact = () => {
       </Container>
     </Devices>
       <Desktop>
-        <Container id={"contact"}>
+        <Container>
           <Title>{data.contact.title}</Title>
           <Text>{data.contact.text}</Text>
           <Subtitle>{data.contact.telephoneNumber}</Subtitle>
@@ -112,7 +111,7 @@ const Contact = () => {
             alt="E.T. image"/>
         </Container>
       </Desktop>
-    </>
+    </div>
   )
 }
 

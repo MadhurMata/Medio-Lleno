@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import Img from "gatsby-image"
 import styled from "@emotion/styled"
 import React, { useEffect, useRef, useState } from "react"
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+
 
 import Burger from "./burger"
 import Menu from "./menu"
@@ -56,6 +58,8 @@ const Header = () => {
   const node = useRef();
   const [open, setOpen] = useState(false);
 
+  console.log(open)
+
   const handleClickOutside = e => {
     if (node.current.contains(e.target)) {
       // inside click
@@ -94,8 +98,7 @@ const Header = () => {
   `)
   return (
       <>
-
-        <HeaderContainer id={"#"}>
+        <HeaderContainer>
           <Link to="/" style={{ textDecoration: `none` }}>
             <Img
               style={{   width: "10rem", height: "5rem" }}
@@ -110,9 +113,9 @@ const Header = () => {
           </Devices>
           <Desktop>
             <NavBar>
-              <li><a href="#">Home</a></li>
-              <li><a href="/#method">Metodología</a></li>
-              <li><a href="/#contact">Contacto</a></li>
+              <li><AnchorLink to="/#hey">Home</AnchorLink></li>
+              <li><AnchorLink to="/#method">Metodología</AnchorLink></li>
+              <li><AnchorLink to="/#contact">Contacto</AnchorLink></li>
             </NavBar>
           </Desktop>
         </HeaderContainer>
