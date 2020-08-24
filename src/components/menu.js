@@ -17,7 +17,6 @@ const StyledMenu = styled.div`
   width: 100vw;
   height: 7rem;
   transition: transform 0.3s ease-in-out;
-  padding: 0 1rem;
 
   @media  {
     width: 100%;
@@ -76,7 +75,7 @@ const Menu = ({ open, setOpen, img }) => {
     >
       <Img
         fixed={img}
-        style={{width: "8rem", height: "4rem", margin: "1rem" }}
+        style={{width: "8rem", height: "4rem"}}
         alt="Medio Lleno logo"
       />
       <Nav>

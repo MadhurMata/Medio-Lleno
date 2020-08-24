@@ -16,7 +16,9 @@ const Desktop = styled.div`
   display: none;
 }
 `
-const Devices = styled.div` 
+const Devices = styled.div`
+  margin: 0 2rem;
+ 
     @media only screen 
   and (min-device-width: 900px) {
     display: none;
@@ -32,7 +34,6 @@ const Container = styled.div`
 `
 
 const TextWrapper = styled.div`
-  margin: 0 2rem;
 `
 
 const Title = styled.h1`

@@ -67,7 +67,6 @@ const Content = styled.div`
   and (min-device-width: 900px) {
     margin-right: 5rem;
 }
-  padding: 0px 10px;
 `
 
 const ImgContainer = styled.ul`
@@ -93,20 +92,20 @@ const Image = styled.img`
 `
 
 const MainMessage = styled.div`
-  margin-top: 8rem;
-  margin-left: 4rem;
+
   color: white;
+  line-height: 3rem;
+  font-size: 2rem;
+  margin: 8rem 2rem 0 2rem;
   
-  h1 {
-    line-height: 4rem;
-    font-size: 3rem;
+      @media only screen 
+  and (min-device-width: 900px) {
+    margin-left: 4rem;
+    h1 {
+      line-height: 4rem;
+      font-size: 3rem;
+    } 
   }
-  
-        @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 899px) {
-  margin-left: 2rem;
-}
 `
 
 class IndexPage extends React.Component {

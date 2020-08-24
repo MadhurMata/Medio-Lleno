@@ -23,6 +23,7 @@ const Desktop = styled.div`
 }
 `
 const Devices = styled.div`
+   margin-right: 2rem;
     @media only screen 
   and (min-device-width: 900px) {
     display: none;
@@ -39,7 +40,6 @@ background-color: #13c1b5;
 `
 
 const BurguerMenu = styled.div`
-  padding-right: 2rem;
 `
 
 const NavBar = styled.ul`

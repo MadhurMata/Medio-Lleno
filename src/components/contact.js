@@ -16,6 +16,8 @@ const Desktop = styled.div`
 }
 `
 const Devices = styled.div`
+  margin: 0 2rem;
+
     @media only screen 
   and (min-device-width: 900px) {
     display: none;
@@ -27,7 +29,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 2rem;
 `
 
 const Title = styled.h1`

@@ -18,7 +18,6 @@ const Desktop = styled.div`
 }
 `
 const Devices = styled.div`
-  margin: 0 2rem;
     @media only screen 
   and (min-device-width: 900px) {
     display: none;
@@ -37,6 +36,11 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
+        @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 899px) {
+    margin: 0 2rem;
+}
 `
 
 const RowFlexContainer = styled.div`
