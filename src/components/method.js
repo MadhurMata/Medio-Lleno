@@ -53,7 +53,7 @@ const Stages = styled.div`
   and (min-device-width: 320px) 
   and (max-device-width: 899px)
   and (-webkit-min-device-pixel-ratio: 2) {
-  max-width: 420px;
+  max-width: 360px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,7 +102,7 @@ const Text = styled.p`
 `
 
 const Arrow = styled.div`
-  margin-left: 4rem;
+  margin-left: 3rem;
   width: 300px;
 `
 const ArrowLeft = styled.div`
