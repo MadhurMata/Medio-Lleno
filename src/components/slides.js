@@ -30,7 +30,6 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
 `
 
 const TextWrapper = styled.div`
@@ -111,10 +110,8 @@ const Slides = props => {
             }
             alt="Liberty statue image"
           />
-          <div style={{ position: "relative", height: "3rem" }}></div>
         </Container>
         <TextWrapper>
-          <Wave></Wave>
           <Title>{data.data[props.slideNumber].title}</Title>
           {data.data[props.slideNumber].text.map((paragraph, key) => {
             return <Text key={key}>{paragraph}</Text>

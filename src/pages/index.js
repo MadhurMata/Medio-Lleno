@@ -108,6 +108,43 @@ const MainMessage = styled.div`
   }
 `
 
+const Wave = styled.div`
+  color: #fde300;
+  position: absolute;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -48px;
+    left: -16px;
+    width: 118px;
+    height: 119px;
+    border-radius: 87%;
+    border-left: solid 9px transparent;
+    border-top: solid 9px transparent;
+    border-right: solid 9px currentColor;
+    border-bottom: solid 9px transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(-90deg);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: -129px;
+    left: 58px;
+    width: 118px;
+    height: 119px;
+    border-radius: 87%;
+    border-left: solid 9px transparent;
+    border-top: solid 9px transparent;
+    border-right: solid 9px currentColor;
+    border-bottom: solid 9px transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(90deg);
+  }
+`
+
 class IndexPage extends React.Component {
     state = {
       intervalId: 0,
@@ -196,6 +233,7 @@ class IndexPage extends React.Component {
         <Content>
           <MainMessage id={"hey"} name={"hey"}>
               <h1>Bien Hecho<br/>es mejor que<br/>bien dicho.</h1>
+              <Wave></Wave>
           </MainMessage>
           <div className="slider-circles" style={{  marginTop:"2rem", marginLeft: "80%"}}>
             <div className={slideNumber === 0 ? "slider-circle active" : "slider-circle"} onClick={(e)=>{this.handleClick(e,0)}}></div>
