@@ -9,9 +9,9 @@ import Contact from "../components/contact"
 import "../components/slider-component.css"
 import styled from "@emotion/styled"
 
-import emailImg from '../images/footer/01-Mesa de trabajo 5.png'
-import instagramImg from '../images/footer/02-Mesa de trabajo 5 copia.png'
-import linkedInImg from '../images/footer/03-Mesa de trabajo 5 copia 2.png'
+import emailImg from '../images/sidebar/02_lateral_mail.png'
+import instagramImg from '../images/sidebar/03_lateral_link.png'
+import linkedInImg from '../images/sidebar/04_lateral_ig.png'
 
 const SideBar = styled.div`
   height: 100%; 
@@ -32,11 +32,11 @@ const Arrow = styled.i`
   position: relative;
   display: inline-block;
   vertical-align: middle;
-  color: yellow;
+  color: white;
   box-sizing: border-box;
-  width: 20px;
-  height: 20px;
-  border-width: 2px 2px 0 0;
+  width: 10px;
+  height: 10px;
+  border-width: 1px 1px 0 0;
   border-style: solid;
   margin: 12px;
   transform: rotate(-45deg);
@@ -45,10 +45,10 @@ const Arrow = styled.i`
   &:before {
     content: "";
     box-sizing: border-box;
-    right: 0px;
-    top: -2px;
+    right: 0.4px;
+    top: -0.6px;
     position: absolute;
-    height: 2px;
+    height: 1px;
     box-shadow: inset 0 0 0 32px;
     transform: rotate(-45deg);
     width: 5rem;
@@ -70,7 +70,7 @@ const Content = styled.div`
 `
 
 const ImgContainer = styled.ul`
-  margin: 0 0.5rem;
+  margin: -4rem 0.5rem;
   z-index: 111;
   list-style-type: none;
 `
@@ -85,10 +85,8 @@ const Container = styled.div`
 const Image = styled.img`
   display: block;
   z-index: 111;
-  height: 20px;
+  height: 15px;
   width: auto;
-  background-color: white;
-  color: yellow;
 `
 
 const MainMessage = styled.div`
@@ -96,7 +94,7 @@ const MainMessage = styled.div`
   color: white;
   line-height: 3rem;
   font-size: 2rem;
-  margin: 8rem 2rem 0 2rem;
+  margin: 8rem 2rem 5rem 2rem;
   
       @media only screen 
   and (min-device-width: 900px) {
@@ -111,6 +109,7 @@ const MainMessage = styled.div`
 const Wave = styled.div`
   color: #fde300;
   position: absolute;
+  margin-top: 3rem;
 
   &:before {
     content: "";
