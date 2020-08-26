@@ -22,7 +22,11 @@ const Desktop = styled.div`
 `
 
 const Devices = styled.div`
-   margin-right: 2rem;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: white;  
+  margin-top: 2rem;
     @media only screen 
   and (min-device-width: 900px) {
     display: none;
