@@ -281,48 +281,48 @@ const Method = () => {
           <RightArrow></RightArrow>
           <CardContainer>
             <Img
-              fixed={query.methodImg.nodes[0].childImageSharp.fixed}
+              fixed={query.methodImg.nodes[1].childImageSharp.fixed}
               alt="Icono de una pantalla ordenador con graficos"
             />
-            <Subtitle>{data.methodology.stages[0].title}</Subtitle>
-            <Text>{data.methodology.stages[0].text}</Text>
+            <Subtitle>{data.methodology.stages[1].title}</Subtitle>
+            <Text>{data.methodology.stages[1].text}</Text>
           </CardContainer>
             <RightArrow></RightArrow>
           <CardContainer>
             <Img
-              fixed={query.methodImg.nodes[0].childImageSharp.fixed}
+              fixed={query.methodImg.nodes[2].childImageSharp.fixed}
               alt="Icono de una pantalla ordenador con graficos"
             />
-            <Subtitle>{data.methodology.stages[0].title}</Subtitle>
-            <Text>{data.methodology.stages[0].text}</Text>
+            <Subtitle>{data.methodology.stages[2].title}</Subtitle>
+            <Text>{data.methodology.stages[2].text}</Text>
           </CardContainer>
         </RowFlexContainer>
-        <RowFlexContainer style={{marginLeft: "10rem", marginTop: "5rem"}}>
+        <RowFlexContainer style={{marginLeft: "10rem", marginTop: "4rem"}}>
           <CardContainer>
             <Img
-              fixed={query.methodImg.nodes[0].childImageSharp.fixed}
+              fixed={query.methodImg.nodes[3].childImageSharp.fixed}
               alt="Icono de una pantalla ordenador con graficos"
             />
-            <Subtitle>{data.methodology.stages[0].title}</Subtitle>
-            <Text>{data.methodology.stages[0].text}</Text>
+            <Subtitle>{data.methodology.stages[3].title}</Subtitle>
+            <Text>{data.methodology.stages[3].text}</Text>
           </CardContainer>
             <RightArrow></RightArrow>
           <CardContainer>
             <Img
-              fixed={query.methodImg.nodes[0].childImageSharp.fixed}
+              fixed={query.methodImg.nodes[4].childImageSharp.fixed}
               alt="Icono de una pantalla ordenador con graficos"
             />
-            <Subtitle>{data.methodology.stages[0].title}</Subtitle>
-            <Text>{data.methodology.stages[0].text}</Text>
+            <Subtitle>{data.methodology.stages[4].title}</Subtitle>
+            <Text>{data.methodology.stages[4].text}</Text>
           </CardContainer>
             <RightArrow></RightArrow>
           <CardContainer>
             <Img
-              fixed={query.methodImg.nodes[0].childImageSharp.fixed}
+              fixed={query.methodImg.nodes[5].childImageSharp.fixed}
               alt="Icono de una pantalla ordenador con graficos"
             />
-            <Subtitle>{data.methodology.stages[0].title}</Subtitle>
-            <Text>{data.methodology.stages[0].text}</Text>
+            <Subtitle>{data.methodology.stages[5].title}</Subtitle>
+            <Text>{data.methodology.stages[5].text}</Text>
           </CardContainer>
         </RowFlexContainer>
       </Desktop>

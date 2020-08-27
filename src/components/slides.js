@@ -82,7 +82,7 @@ const Slides = props => {
         </TextWrapper>
       </Devices>
       <Desktop>
-        <Container style={{  maxWidth: "75%" }}>
+        <Container style={{  maxWidth: "75%", marginRight: "2rem" }}>
           <Title>{data.data[props.slideNumber].title}</Title>
           {data.data[props.slideNumber].text.map((paragraph, key) => {
             return <Text key={key}>{paragraph}</Text>

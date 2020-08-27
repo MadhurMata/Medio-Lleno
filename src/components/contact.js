@@ -48,7 +48,7 @@ width: 100%;
 `
 const Subtitle = styled.h1`
   color: white;
-  font-size 0.9rem;
+  font-size 0.8rem;
   font-weight: 550;
   width: 100%;
   text-align: left;
@@ -97,7 +97,7 @@ const Contact = () => {
       </Container>
     </Devices>
       <Desktop>
-        <Container>
+        <Container style={{paddingRight:"2rem"}}>
           <Title>{data.contact.title}</Title>
           <Text>{data.contact.text}</Text>
           <Subtitle>{data.contact.telephoneNumber}</Subtitle>
