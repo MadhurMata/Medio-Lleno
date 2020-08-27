@@ -80,20 +80,20 @@ const Menu = ({ open, setOpen, img }) => {
       <Nav>
         <Link to="hey" offset={-100} onClick={() => setOpen(!open)}><p>Home</p>
           <Img
-            fixed={query.navImg.nodes[1].childImageSharp.fixed}
+            fixed={query.navImg.nodes[0].childImageSharp.fixed}
             alt="Home logo"
           />
         </Link>
         <Link to="queHacemos" offset={-100} onClick={() => setOpen(!open)}><p>¿Que hacemos?</p>
           <Img
-            fixed={query.navImg.nodes[0].childImageSharp.fixed}
+            fixed={query.navImg.nodes[3].childImageSharp.fixed}
             alt="Que hacemos logo"
           />
         </Link>
 
         <Link to="method" offset={-100} onClick={() => setOpen(!open)}><p>Metodología</p>
           <Img
-            fixed={query.navImg.nodes[3].childImageSharp.fixed}
+            fixed={query.navImg.nodes[1].childImageSharp.fixed}
             alt="Metodología logo"
           />
         </Link>

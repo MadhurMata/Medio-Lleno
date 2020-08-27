@@ -42,6 +42,13 @@ background-color: #13c1b5;
 const BurguerMenu = styled.div`
 `
 
+const ImageWrapper = styled.div`
+    @media only screen 
+  and (min-device-width: 900px) {
+    margin-left: 5rem;
+}
+`
+
 const NavBar = styled.ul`
   display: flex;
   justify-content: space-evenly;
@@ -103,12 +110,14 @@ const Header = () => {
   return (
       <>
         <HeaderContainer>
-          <Link to="/" style={{ textDecoration: `none` }}>
-            <Img
-              style={{   width: "10rem", height: "5rem" }}
-              fluid={query.headerImg.nodes[0].childImageSharp.fluid}
-              alt="Medio Lleno logo"/>
-          </Link>
+          <ImageWrapper>
+            <Link to="/" style={{ textDecoration: `none` }}>
+              <Img
+                style={{   width: "10rem", height: "5rem" }}
+                fluid={query.headerImg.nodes[0].childImageSharp.fluid}
+                alt="Medio Lleno logo"/>
+            </Link>
+          </ImageWrapper>
           <Devices>
             <BurguerMenu ref={node}>
               <Burger open={open} setOpen={setOpen} />
