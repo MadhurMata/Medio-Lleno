@@ -25,7 +25,7 @@ module.exports.methodology = {
     },
     {
       title: "06. Seguimiento:",
-      text: "hacemos un seguimiento exhaustivo de los diferentes KPIs para poder cuantificar el éxito del proyecto.",
+      text: "Hacemos un seguimiento exhaustivo de los diferentes KPIs para poder cuantificar el éxito del proyecto.",
     }
   ]
 }
