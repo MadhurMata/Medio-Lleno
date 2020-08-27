@@ -46,11 +46,15 @@ const NavBar = styled.ul`
   display: flex;
   justify-content: space-evenly;
   list-style-type: none;
-  width: 19rem;
+  width: 25rem;
   
   a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
+  
+   &:hover {
+      border-bottom: 3px #fde300 solid;
+    }
   }
 `
 
@@ -114,6 +118,7 @@ const Header = () => {
           <Desktop>
             <NavBar>
               <li><AnchorLink to="/#hey">Home</AnchorLink></li>
+              <li><AnchorLink to="/#queHacemos">¿Que hacemos?</AnchorLink></li>
               <li><AnchorLink to="/#method">Metodología</AnchorLink></li>
               <li><AnchorLink to="/#contact">Contacto</AnchorLink></li>
             </NavBar>

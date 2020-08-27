@@ -182,7 +182,7 @@ const Method = () => {
 `)
 
   return (
-    <div id={"method"} name={"method"} style={{  display: "flex", justifyContent: "center"}}>
+    <div id={"method"} name={"method"} style={{  display: "flex", justifyContent: "center", marginTop: "2rem"}}>
       <Devices>
         <Wrapper>
           <Container>

@@ -151,7 +151,8 @@ class IndexPage extends React.Component {
       isMediaShown: true
     }
 
-  componentDidMount(){window.addEventListener('scroll', this.trackScrolling);
+  componentDidMount(){
+    // window.addEventListener('scroll', this.trackScrolling);
     const intervalId = setInterval(this.slidesInterval, 30000);
     this.setState({intervalId: intervalId});
   }

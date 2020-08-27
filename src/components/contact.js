@@ -81,7 +81,7 @@ const Contact = () => {
 `
   )
   return (
-    <div id={"contact"} name={"contact"} style={{display: "flex", justifyContent: "center"}}>
+    <div id={"contact"} name={"contact"} style={{display: "flex", justifyContent: "center", marginTop: "2rem"}}>
     <Devices>
       <Container>
         <Title>{data.contact.title}</Title>

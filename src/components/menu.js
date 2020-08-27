@@ -17,6 +17,7 @@ const StyledMenu = styled.div`
   width: 100vw;
   height: 7rem;
   transition: transform 0.3s ease-in-out;
+  padding: 1rem;
 
   @media  {
     width: 100%;
@@ -28,11 +29,10 @@ const Nav = styled.nav`
   flex-direction: column;
   justify-content: space-evenly;
   a {
+    align-items: baseline;
     color: #13c1b5;
-      display: flex;
-    align-items: center;
+    display: flex;
     justify-content: flex-end;
-    font-size: 1rem;
     font-weight: bold;
     text-decoration-color: transparent;
     transition: color 0.3s linear;
@@ -40,14 +40,13 @@ const Nav = styled.nav`
     div {
       margin-left: 1rem
     }
-
-    @media  {
-      font-size: 1rem;
+    
+    p {
+      font-size: 0.8rem;
+      margin: 0;
+      &:hover {
+        border-bottom: 3px #fde300 solid;
     }
-
-    &:hover {
-      text-decoration: underline;
-      text-decoration-color: #fde300;
     }
   }
 `
@@ -75,23 +74,30 @@ const Menu = ({ open, setOpen, img }) => {
     >
       <Img
         fixed={img}
-        style={{width: "8rem", height: "4rem"}}
+        style={{width: "6rem", height: "3rem"}}
         alt="Medio Lleno logo"
       />
       <Nav>
-        <Link to="hey" offset={-100} onClick={() => setOpen(!open)}>Home
+        <Link to="hey" offset={-100} onClick={() => setOpen(!open)}><p>Home</p>
           <Img
             fixed={query.navImg.nodes[1].childImageSharp.fixed}
             alt="Home logo"
           />
         </Link>
-        <Link to="method" offset={-100} onClick={() => setOpen(!open)}>Metodología
+        <Link to="queHacemos" offset={-100} onClick={() => setOpen(!open)}><p>¿Que hacemos?</p>
           <Img
             fixed={query.navImg.nodes[0].childImageSharp.fixed}
+            alt="Que hacemos logo"
+          />
+        </Link>
+
+        <Link to="method" offset={-100} onClick={() => setOpen(!open)}><p>Metodología</p>
+          <Img
+            fixed={query.navImg.nodes[3].childImageSharp.fixed}
             alt="Metodología logo"
           />
         </Link>
-        <Link to="contact" offset={-100} onClick={() => setOpen(!open)}>Contacto
+        <Link to="contact" offset={-100} onClick={() => setOpen(!open)}><p>Contacto</p>
           <Img
             fixed={query.navImg.nodes[2].childImageSharp.fixed}
             alt="Contacto logo"

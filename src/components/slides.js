@@ -47,43 +47,6 @@ color: white;
 font-size 0.8rem;
 `
 
-const Wave = styled.div`
-  color: #fde300;
-  position: absolute;
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: -48px;
-    left: -16px;
-    width: 118px;
-    height: 119px;
-    border-radius: 87%;
-    border-left: solid 9px transparent;
-    border-top: solid 9px transparent;
-    border-right: solid 9px currentColor;
-    border-bottom: solid 9px transparent;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(-90deg);
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    top: -129px;
-    left: 58px;
-    width: 118px;
-    height: 119px;
-    border-radius: 87%;
-    border-left: solid 9px transparent;
-    border-top: solid 9px transparent;
-    border-right: solid 9px currentColor;
-    border-bottom: solid 9px transparent;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(90deg);
-  }
-`
-
 const Slides = props => {
   const query = useStaticQuery(graphql`
     query {
@@ -101,7 +64,7 @@ const Slides = props => {
     }
   `)
   return (
-    <div style={{display: "flex", justifyContent: "center"}}>
+    <div style={{display: "flex", justifyContent: "center"}} id={"queHacemos"} name={"queHacemos"}>
       <Devices>
         <Container>
           <Img
@@ -119,7 +82,7 @@ const Slides = props => {
         </TextWrapper>
       </Devices>
       <Desktop>
-        <Container style={{  maxWidth: "80%" }}>
+        <Container style={{  maxWidth: "75%" }}>
           <Title>{data.data[props.slideNumber].title}</Title>
           {data.data[props.slideNumber].text.map((paragraph, key) => {
             return <Text key={key}>{paragraph}</Text>

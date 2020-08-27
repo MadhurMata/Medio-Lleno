@@ -17,7 +17,7 @@ module.exports.methodology = {
     },
     {
       title: "04. Producción:",
-      text: "Cuidamos cada detalle del proceso para asegurar la máxima calidad del resultado final.",
+      text: "Cuidamos cada detalle del proceso para asegurar la máxima calidad en el resultado final.",
     },
     {
       title: "05. Lanzamiento:",
