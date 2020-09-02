@@ -6,11 +6,11 @@ import { graphql, useStaticQuery } from "gatsby"
 
 
 const Desktop = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 1rem 0 4rem;
-  max-width: 650px;
+  margin: 0 6rem;
       @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 899px) {
@@ -45,7 +45,6 @@ const Container = styled.div`
 
 const RowFlexContainer = styled.div`
   display: flex;
-  padding-right: 5rem;
 `
 const Stages = styled.div`
 
@@ -88,17 +87,31 @@ const Title = styled.h1`
   color: white;
   font-size: 1.7rem;
   font-weight: 550;
+  
+  @media only screen 
+  and (min-device-width: 900px) {
+      font-size: 2.5rem;    
+  }
 `
 const Subtitle = styled.h1`
   color: white;
   font-size 0.8rem;
   font-weight: 550;
   margin-bottom: 1rem;
+  @media only screen 
+  and (min-device-width: 900px) {
+      font-size: 1.2rem;
+      margin-top: 1rem;    
+  }
 `
 
 const Text = styled.p`
   color: white;
   font-size 0.8rem;
+  @media only screen 
+  and (min-device-width: 900px) {
+      font-size: 1rem;    
+  }
 `
 
 const Arrow = styled.div`
@@ -115,8 +128,7 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 150px;
-  margin: 0 2rem 0 1.6rem;
+  margin: 0 3rem;
 `
 
 const RightArrow = styled.i`
@@ -126,7 +138,7 @@ const RightArrow = styled.i`
   vertical-align: middle;
   color: yellow;
   box-sizing: border-box;
-  width: 10px;
+  min-width: 10px;
   height: 10px;
   border-width: 2px 2px 0 0;
   border-style: solid;
@@ -154,15 +166,9 @@ const RightArrow = styled.i`
 `
 
 const Method = () => {
-  const arrowRight = <svg viewBox="-10 0 500 110">
+  const arrowRight = <svg viewBox="-10 0 600 210">
     <path
       d="M 0 0, Q 0 50 50 50, H300,M 300   50, Q 350 50 350 100,M 351 102,L 330 85,M 349 102, L 369 85" fill="transparent" stroke="#fde300"   strokeWidth="3"/>
-  </svg>
-
-  const BigArrow = <svg style={{position:"absolute", height:"600", marginTop:" 10rem", marginLeft: "-5rem", width: "752px"}}>
-    <path
-      d="M 675 50 L 700 50 Q 750 50 750 100 L 750 300 Q 750 350 700 350 L 150 350 Q 100 350 100 400 Q 100 450 150 450 M 150 450, L 140 458, M 151 450, L 140 440"
-      fill="transparent" stroke="#fde300"   strokeWidth="2"/>
   </svg>
 
   const query = useStaticQuery(graphql`
@@ -182,7 +188,7 @@ const Method = () => {
 `)
 
   return (
-    <div id={"method"} name={"method"} style={{  display: "flex", justifyContent: "center", marginTop: "2rem"}}>
+    <div id={"method"} name={"method"} style={{  display: "flex", justifyContent: "center"}}>
       <Devices>
         <Wrapper>
           <Container>
@@ -261,9 +267,6 @@ const Method = () => {
         </Wrapper>
       </Devices>
       <Desktop>
-        <div className={"xxxxxx"} style={{position:"relative", width: "100%"}}>
-          {BigArrow}
-        </div>
         <Container>
           <Title>{data.methodology.title}</Title>
           <Text>{data.methodology.text}</Text>
@@ -297,7 +300,7 @@ const Method = () => {
             <Text>{data.methodology.stages[2].text}</Text>
           </CardContainer>
         </RowFlexContainer>
-        <RowFlexContainer style={{marginLeft: "10rem", marginTop: "4rem"}}>
+        <RowFlexContainer>
           <CardContainer>
             <Img
               fixed={query.methodImg.nodes[3].childImageSharp.fixed}

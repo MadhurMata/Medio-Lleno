@@ -5,10 +5,9 @@ import Img from "gatsby-image"
 import data from "../metadata/contact"
 
 const Desktop = styled.div`
-  height: 100%;
-  width: 100%;
+  height: 4rem;
+  width: 100vw;
   display: flex;
-  margin-top: 2rem;
   justify-content: space-around;
   align-items: flex-end;
   background-color: white;  
@@ -22,11 +21,12 @@ const Desktop = styled.div`
 `
 
 const Devices = styled.div`
-  height: 100%;
-  width: 100%;
+  height: 4rem;
+  width: 100vw;
   display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: white;  
-  margin-top: 2rem;
   
     @media only screen 
   and (min-device-width: 900px) {
@@ -35,29 +35,29 @@ const Devices = styled.div`
 `
 
 const Container = styled.div`
-  height: 100%;
-  width: 100%;
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
+  height: 100%;
+  align-items: center;
 `
 
 const ContainerTexts = styled.div`
   height: 100%;
-  width: 100%;
   display: flex;
   justify-content: center;
-  align-item: center;
+  align-items: center;
   font-size: 0.8rem;
   p {
     color: #13c1b5;
     margin-left: 2rem;
+    margin-bottom: 0;
 
   }
 `
 
 const ImgContainer = styled.div`
-  margin: 1rem;
+  margin-right: 1rem;
 `
 
 const Footer = () => {
@@ -78,7 +78,7 @@ const Footer = () => {
     }
   `)
   return (
-    <>
+    <div id={"footer"} name={"footer"}>
       <Devices>
         <Container>
           {query.footerImg.nodes.map((node, key)=>{
@@ -114,7 +114,7 @@ const Footer = () => {
           <div id="ttt"></div>
         </Container>
       </Desktop>
-    </>
+    </div>
   )
 }
 

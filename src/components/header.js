@@ -58,9 +58,11 @@ const NavBar = styled.ul`
   a {
     color: white;
     text-decoration: none;
+      font-size: 0.8rem;
   
    &:hover {
       border-bottom: 3px #fde300 solid;
+      font-weight: 700;
     }
   }
 `
@@ -129,12 +131,10 @@ const Header = () => {
               <li><AnchorLink to="/#hey">Home</AnchorLink></li>
               <li><AnchorLink to="/#queHacemos">¿Que hacemos?</AnchorLink></li>
               <li><AnchorLink to="/#method">Metodología</AnchorLink></li>
-              <li><AnchorLink to="/#contact">Contacto</AnchorLink></li>
+              <li><AnchorLink to="/#address">Contacto</AnchorLink></li>
             </NavBar>
           </Desktop>
         </HeaderContainer>
-
-
       </>
   )
 }

@@ -9,9 +9,9 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import Header from "./header"
-import Footer from "./footer"
 import "./layout.css"
 import styled from "@emotion/styled"
+import Footer from "./footer"
 
 const Wrapper = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const Layout = ({closeHeader, children }) => {
     <Wrapper>
       <Header closeHeader={closeHeader}/>
       <main>{children}</main>
-      <Footer id={"footer"} name={"footer"}/>
+      <Footer/>
     </Wrapper>
   )
 }

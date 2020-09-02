@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "@emotion/styled"
 import { bool } from "prop-types"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
-import { Link, animateScroll as scroll } from "react-scroll";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
+import { Link } from "react-scroll";
 
 
 const StyledMenu = styled.div`
@@ -15,7 +14,7 @@ const StyledMenu = styled.div`
   justify-content: space-between;
   background: white;
   width: 100vw;
-  height: 7rem;
+  height: 6rem;
   transition: transform 0.3s ease-in-out;
   padding: 1rem;
 
@@ -29,11 +28,10 @@ const Nav = styled.nav`
   flex-direction: column;
   justify-content: space-evenly;
   a {
-    align-items: baseline;
+    align-items: center;
     color: #13c1b5;
     display: flex;
     justify-content: flex-end;
-    font-weight: bold;
     text-decoration-color: transparent;
     transition: color 0.3s linear;
     
@@ -42,10 +40,11 @@ const Nav = styled.nav`
     }
     
     p {
-      font-size: 0.8rem;
+      font-size: 0.6rem;
       margin: 0;
       &:hover {
         border-bottom: 3px #fde300 solid;
+        font-weight: 700;
     }
     }
   }
@@ -59,7 +58,7 @@ const Menu = ({ open, setOpen, img }) => {
       ) {
         nodes {
           childImageSharp {
-            fixed(width: 20 height: 20) {
+            fixed(width: 15 height: 15) {
               ...GatsbyImageSharpFixed
             }
           }

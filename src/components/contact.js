@@ -3,12 +3,12 @@ import data from "../metadata/contact"
 import styled from "@emotion/styled"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import Footer from "./footer"
 
 const Desktop = styled.div`
   display: flex;
   justify-content: space-evenly;;
-  margin: 0 1rem 0 4rem;
-  max-width: 650px;
+  margin: 0 6rem;
       @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 899px) {
@@ -30,6 +30,13 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `
+const FullDiv = styled.div`
+    @media only screen 
+  and (min-device-width: 900px) {
+  display: flex;
+  height: 100%;
+  }
+`
 
 const Title = styled.h1`
 color: white;
@@ -38,6 +45,11 @@ font-weight: 550;
 text-align: left;
 width: 100%;
 
+@media only screen 
+  and (min-device-width: 900px) {
+      font-size: 2.5rem;    
+  }
+
 `
 
 const Text = styled.p`
@@ -45,6 +57,11 @@ color: white;
 font-size 0.8rem;
 text-align: left;
 width: 100%;
+
+@media only screen 
+  and (min-device-width: 900px) {
+      font-size: 1rem;
+  }
 `
 const Subtitle = styled.h1`
   color: white;
@@ -53,6 +70,10 @@ const Subtitle = styled.h1`
   width: 100%;
   text-align: left;
   margin: 0;
+  @media only screen 
+  and (min-device-width: 900px) {
+      font-size: 1rem;
+  }
 `
 
 const Adress = styled.p`
@@ -60,7 +81,11 @@ color: #fde300;
 font-size 0.8rem;
 text-align: left;
 width: 100%;
-margin: 0;
+margin: 0;\
+@media only screen 
+  and (min-device-width: 900px) {
+      font-size: 1rem;
+  }
 `
 
 const Contact = () => {
@@ -81,7 +106,7 @@ const Contact = () => {
 `
   )
   return (
-    <div id={"contact"} name={"contact"} style={{display: "flex", justifyContent: "center", marginTop: "2rem"}}>
+    <div id={"contact"} name={"contact"} style={{display: "flex", flexDirection: "column", justifyContent: "spaceBetween", height: "100vh"}}>
     <Devices>
       <Container>
         <Title>{data.contact.title}</Title>
@@ -96,22 +121,29 @@ const Contact = () => {
           <Adress>{data.contact.adressSecondLine}</Adress>
       </Container>
     </Devices>
-      <Desktop>
-        <Container style={{paddingRight:"2rem"}}>
-          <Title>{data.contact.title}</Title>
-          <Text>{data.contact.text}</Text>
-          <Subtitle>{data.contact.telephoneNumber}</Subtitle>
-          <Subtitle>{data.contact.email}</Subtitle>
-          <Adress>{data.contact.adressFirstLine}</Adress>
-          <Adress>{data.contact.adressSecondLine}</Adress>
-        </Container>
-        <Container>
-          <Img
-            style={{  margin: "2rem 0"}}
-            fixed={query.contactImg.nodes[0].childImageSharp.fixed}
-            alt="E.T. image"/>
-        </Container>
-      </Desktop>
+    <FullDiv>
+        <Desktop>
+          <Container style={{paddingRight:"10rem", paddingTop:"4rem"}}>
+            <div>
+              <Title>{data.contact.title}</Title>
+              <Text>{data.contact.text}</Text>
+
+            </div>
+            <div style={{width: "100%"}} id={"address"} name={"address"}>
+              <Subtitle>{data.contact.telephoneNumber}</Subtitle>
+              <Subtitle>{data.contact.email}</Subtitle>
+              <Adress>{data.contact.adressFirstLine}</Adress>
+              <Adress>{data.contact.adressSecondLine}</Adress>
+            </div>
+          </Container>
+          <Container>
+            <Img
+              style={{  margin: "2rem 0"}}
+              fixed={query.contactImg.nodes[0].childImageSharp.fixed}
+              alt="E.T. image"/>
+          </Container>
+        </Desktop>
+      </FullDiv>
     </div>
   )
 }
