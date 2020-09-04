@@ -2,7 +2,6 @@ import React from "react"
 import styled from "@emotion/styled"
 import { useStaticQuery, graphql } from "gatsby"
 import data from "../metadata/data"
-
 import Img from "gatsby-image"
 import "../components/slider-component.css"
 
@@ -10,6 +9,9 @@ const Desktop = styled.div`
   display: flex;
   justify-content: space-evenly;;
   margin: 0 6rem;
+  position: relative;
+  overflow: hidden;
+  
       @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 899px) {
@@ -31,8 +33,12 @@ const Container = styled.div`
   justify-content: center;
   align-items: flex-start;
 `
+const ContainerFoto = styled.div`
+  margin: 2rem;
+`
 
-const TextWrapper = styled.div`
+const SliderWrapper = styled.div`
+position: relative;
 `
 
 const Title = styled.h1`
@@ -56,6 +62,37 @@ font-size 0.8rem;
       font-size: 1rem;    
   }
 `
+
+const NextSlide = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  border-style: solid;
+  border-width: 5px 5px 20px 20px;
+  border-color: white white transparent transparent;
+  margin-top: 10px;
+  width: 16px;
+  height: 1px;
+  right: 5%;
+  z-index:999
+`
+
+const PreviousSlide = styled.div`
+  position: absolute;
+  top: 50%;
+  transform: rotate(45deg);
+  border-style: solid;
+  border-width: 20px 20px 5px 5px;
+  border-color: transparent transparent white white;
+  margin-left: 2px;
+  margin-top: 10px;
+  width: 16px;
+  height: 1px;
+  left: 5%;
+  z-index:999
+`
+
+
 
 class Slides extends React.Component {
   state = {
@@ -94,6 +131,7 @@ class Slides extends React.Component {
 
   render() {
     const { slideNumber } = this.state
+    console.log(slideNumber)
     return (
       <div
         style={{ display: "flex", justifyContent: "center", flexDirection:"column", height: "100vh" }}
@@ -127,18 +165,27 @@ class Slides extends React.Component {
           ></div>
         </div>
         <Devices>
-          <Container>
-            <Img
-              fixed={this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed}
-              alt="Liberty statue image"
-            />
-          </Container>
-          <TextWrapper>
+          <SliderWrapper>
+            { slideNumber > 0 ?
+              <PreviousSlide onClick={e => { this.handleClick(e, slideNumber - 1) }}></PreviousSlide>
+              : <div></div> }
+            { slideNumber < 2  ?
+              <NextSlide onClick={e => { this.handleClick(e, slideNumber + 1) }}></NextSlide>
+              : null }
+            <Container>
+              <Img
+                fixed={this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed}
+                alt="Liberty statue image"
+              />
+            </Container>
+
+          </SliderWrapper>
+          <div>
             <Title>{data.data[slideNumber].title}</Title>
             {data.data[slideNumber].text.map((paragraph, key) => {
               return <Text key={key}>{paragraph}</Text>
             })}
-          </TextWrapper>
+          </div>
         </Devices>
         <Desktop>
           <Container style={{ maxWidth: "75%", marginRight: "2rem" }}>
@@ -147,15 +194,25 @@ class Slides extends React.Component {
               return <Text key={key}>{paragraph}</Text>
             })}
           </Container>
-          <Container>
-            <Img
-              fixed={
-                this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed
-              }
-              alt="Liberty statue image"
-            />
-            <div style={{ position: "relative", height: "3rem" }}></div>
-          </Container>
+          <SliderWrapper>
+            { slideNumber > 0 ?
+              <PreviousSlide onClick={e => { this.handleClick(e, slideNumber - 1) }}></PreviousSlide>
+              : <div></div> }
+            { slideNumber < 2  ?
+              <NextSlide onClick={e => { this.handleClick(e, slideNumber + 1) }}></NextSlide>
+              : null }
+            <ContainerFoto>
+              <Img
+                fixed={
+                  this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed
+                }
+                alt="Liberty statue image"
+              />
+              <div style={{ position: "relative", width: "100%", height: "3rem", display: "flex", justifyContent: "space-between", padding: "0 1rem" }}>
+
+              </div>
+            </ContainerFoto>
+          </SliderWrapper>
         </Desktop>
       </div>
     )
