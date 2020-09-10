@@ -73,8 +73,16 @@ const NextSlide = styled.div`
   margin-top: 10px;
   width: 16px;
   height: 1px;
-  right: 5%;
-  z-index:999
+  right: 0%;
+  z-index: 100;
+  
+  @media only screen 
+  and (min-device-width: 900px) {
+      right: 5%;  
+      &:hover {
+        border-color: #fde300 #fde300 transparent transparent;
+      }
+  }
 `
 
 const PreviousSlide = styled.div`
@@ -88,8 +96,26 @@ const PreviousSlide = styled.div`
   margin-top: 10px;
   width: 16px;
   height: 1px;
-  left: 5%;
-  z-index:999
+  z-index:100;
+  left: 0%;
+ 
+  @media only screen 
+  and (min-device-width: 900px) {
+      left: 5%;
+      &:hover {
+        border-color: transparent transparent #fde300 #fde300;
+      }
+  }
+`
+const CirclesSlides = styled.div`
+ display: flex;
+ justify- content: center;
+ flex-direction: column;
+
+  @media only screen 
+  and (min-device-width: 900px) {
+    height: 100vh;
+  }
 `
 
 
@@ -133,8 +159,7 @@ class Slides extends React.Component {
     const { slideNumber } = this.state
     console.log(slideNumber)
     return (
-      <div
-        style={{ display: "flex", justifyContent: "center", flexDirection:"column", height: "100vh" }}
+      <CirclesSlides
         id={"queHacemos"}
         name={"queHacemos"}
       >
@@ -187,7 +212,36 @@ class Slides extends React.Component {
             })}
           </div>
         </Devices>
-        <Desktop>
+          { slideNumber === 1 ?
+            <Desktop>
+              <SliderWrapper>
+                { slideNumber > 0 ?
+                  <PreviousSlide onClick={e => { this.handleClick(e, slideNumber - 1) }}></PreviousSlide>
+                  : <div></div> }
+                { slideNumber < 2  ?
+                  <NextSlide onClick={e => { this.handleClick(e, slideNumber + 1) }}></NextSlide>
+                  : null }
+                <ContainerFoto>
+                  <Img
+                    fixed={
+                      this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed
+                    }
+                    alt="Liberty statue image"
+                  />
+                  <div style={{ position: "relative", width: "100%", height: "3rem", display: "flex", justifyContent: "space-between", padding: "0 1rem" }}>
+
+                  </div>
+                </ContainerFoto>
+              </SliderWrapper>
+              <Container style={{ maxWidth: "75%", marginLeft: "2rem", alignItems: "flex-end" }}>
+                <Title style={{ textAlign: "right" }}>{data.data[slideNumber].title}</Title>
+                {data.data[slideNumber].text.map((paragraph, key) => {
+                  return <Text style={{ textAlign: "right" }} key={key}>{paragraph}</Text>
+                })}
+              </Container>
+          </Desktop>
+          :
+          <Desktop>
           <Container style={{ maxWidth: "75%", marginRight: "2rem" }}>
             <Title>{data.data[slideNumber].title}</Title>
             {data.data[slideNumber].text.map((paragraph, key) => {
@@ -213,8 +267,12 @@ class Slides extends React.Component {
               </div>
             </ContainerFoto>
           </SliderWrapper>
-        </Desktop>
-      </div>
+
+          </Desktop>
+          }
+
+
+      </CirclesSlides>
     )
   }
 }
