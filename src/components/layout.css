@@ -1,10 +1,14 @@
 @font-face {
-  font-family: "Futura";
+  font-family: "Futura-light";
   src: url("../../static/fonts/FUTURA/futura light bt.ttf")   format('truetype');
+}
+@font-face {
+  font-family: "Futura-bold";
+  src: url("../../static/fonts/FUTURA/Futura Bold font.ttf")   format('truetype');
 }
 
 html {
-  font-family: Futura;
+  font-family: Futura-light;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -13,7 +17,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #13c1b5;
-  font-family: Futura;
+  font-family: Futura-light;
 }
 
 
@@ -70,6 +74,7 @@ dfn {
   font-style: italic;
 }
 h1 {
+  font-family: Futura-bold;
   font-size: 1.6rem;
   font-weight: 550;
   margin: 0.67em 0;

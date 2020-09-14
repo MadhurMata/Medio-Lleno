@@ -38,7 +38,10 @@ const ContainerFoto = styled.div`
 `
 
 const SliderWrapper = styled.div`
-position: relative;
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+align-items: center;
 `
 
 const Title = styled.h1`
@@ -63,50 +66,6 @@ font-size 0.8rem;
   }
 `
 
-const NextSlide = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: rotate(45deg);
-  border-style: solid;
-  border-width: 5px 5px 20px 20px;
-  border-color: white white transparent transparent;
-  margin-top: 10px;
-  width: 16px;
-  height: 1px;
-  right: 0%;
-  z-index: 100;
-  
-  @media only screen 
-  and (min-device-width: 900px) {
-      right: 5%;  
-      &:hover {
-        border-color: #fde300 #fde300 transparent transparent;
-      }
-  }
-`
-
-const PreviousSlide = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: rotate(45deg);
-  border-style: solid;
-  border-width: 20px 20px 5px 5px;
-  border-color: transparent transparent white white;
-  margin-left: 2px;
-  margin-top: 10px;
-  width: 16px;
-  height: 1px;
-  z-index:100;
-  left: 0%;
- 
-  @media only screen 
-  and (min-device-width: 900px) {
-      left: 5%;
-      &:hover {
-        border-color: transparent transparent #fde300 #fde300;
-      }
-  }
-`
 const CirclesSlides = styled.div`
  display: flex;
  justify- content: center;
@@ -118,6 +77,53 @@ const CirclesSlides = styled.div`
   }
 `
 
+const ArrowList = styled.ul`
+  display: flex;
+  margin: 0;
+  li {
+    i{
+      border-color: white;
+    } 
+  }
+  
+  &:hover {
+    li {
+      i{
+        border-color: #fde300;
+      } 
+    }
+  }
+`
+
+const ArrowLine = styled.li`
+  width: 0.6rem;
+  text-align: center;
+  list-style: none;
+  display: inline-block;
+`
+
+const ArrowRight = styled.i`
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 4px solid;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 10%;
+  text-indent: -999rem;
+  transform: rotate(45deg);
+`
+const ArrowLeft = styled.i`
+  display: inline-block;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 4px solid;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 10%;
+  text-indent: -999rem;
+  transform: rotate(225deg);
+`
 
 
 class Slides extends React.Component {
@@ -127,7 +133,7 @@ class Slides extends React.Component {
   }
 
   componentDidMount() {
-    const intervalId = setInterval(this.slidesInterval, 30000)
+    const intervalId = setInterval(this.slidesInterval, 3000000)
     this.setState({ intervalId: intervalId })
   }
 
@@ -144,7 +150,7 @@ class Slides extends React.Component {
     e.nativeEvent.stopImmediatePropagation()
     clearInterval(this.state.intervalId)
     this.setState({ slideNumber: slideNumber })
-    const intervalId = setInterval(this.slidesInterval, 30000, slideNumber)
+    const intervalId = setInterval(this.slidesInterval, 3000000, slideNumber)
     this.setState({
       intervalId: intervalId,
     })
@@ -191,19 +197,20 @@ class Slides extends React.Component {
         </div>
         <Devices>
           <SliderWrapper>
-            { slideNumber > 0 ?
-              <PreviousSlide onClick={e => { this.handleClick(e, slideNumber - 1) }}></PreviousSlide>
-              : <div></div> }
-            { slideNumber < 2  ?
-              <NextSlide onClick={e => { this.handleClick(e, slideNumber + 1) }}></NextSlide>
-              : null }
+            <ArrowList>
+              <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
+              <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
+            </ArrowList>
             <Container>
               <Img
                 fixed={this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed}
                 alt="Liberty statue image"
               />
             </Container>
-
+            <ArrowList>
+              <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
+              <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
+            </ArrowList>
           </SliderWrapper>
           <div>
             <Title>{data.data[slideNumber].title}</Title>
@@ -215,12 +222,6 @@ class Slides extends React.Component {
           { slideNumber === 1 ?
             <Desktop>
               <SliderWrapper>
-                { slideNumber > 0 ?
-                  <PreviousSlide onClick={e => { this.handleClick(e, slideNumber - 1) }}></PreviousSlide>
-                  : <div></div> }
-                { slideNumber < 2  ?
-                  <NextSlide onClick={e => { this.handleClick(e, slideNumber + 1) }}></NextSlide>
-                  : null }
                 <ContainerFoto>
                   <Img
                     fixed={
@@ -228,9 +229,6 @@ class Slides extends React.Component {
                     }
                     alt="Liberty statue image"
                   />
-                  <div style={{ position: "relative", width: "100%", height: "3rem", display: "flex", justifyContent: "space-between", padding: "0 1rem" }}>
-
-                  </div>
                 </ContainerFoto>
               </SliderWrapper>
               <Container style={{ maxWidth: "75%", marginLeft: "2rem", alignItems: "flex-end" }}>
@@ -249,12 +247,6 @@ class Slides extends React.Component {
             })}
           </Container>
           <SliderWrapper>
-            { slideNumber > 0 ?
-              <PreviousSlide onClick={e => { this.handleClick(e, slideNumber - 1) }}></PreviousSlide>
-              : <div></div> }
-            { slideNumber < 2  ?
-              <NextSlide onClick={e => { this.handleClick(e, slideNumber + 1) }}></NextSlide>
-              : null }
             <ContainerFoto>
               <Img
                 fixed={

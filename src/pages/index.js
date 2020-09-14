@@ -85,7 +85,7 @@ const IndexPage = () => {
       ) {
         nodes {
           childImageSharp {
-            fixed(width: 300, height: 350) {
+            fixed(width: 300, height: 320) {
               ...GatsbyImageSharpFixed
             }
           }
