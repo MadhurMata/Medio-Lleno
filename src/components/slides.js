@@ -96,7 +96,7 @@ const ArrowList = styled.ul`
 `
 
 const ArrowLine = styled.li`
-  width: 0.6rem;
+  width: 6px;
   text-align: center;
   list-style: none;
   display: inline-block;
@@ -104,9 +104,9 @@ const ArrowLine = styled.li`
 
 const ArrowRight = styled.i`
   display: inline-block;
-  width: 1.1rem;
-  height: 1.1rem;
-  border: 4px solid;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 3px solid;
   border-bottom: 0;
   border-left: 0;
   border-radius: 10%;
@@ -115,9 +115,9 @@ const ArrowRight = styled.i`
 `
 const ArrowLeft = styled.i`
   display: inline-block;
-  width: 1.1rem;
-  height: 1.1rem;
-  border: 4px solid;
+  width: 0.8rem;
+  height: 0.8rem;
+  border: 3px solid;
   border-bottom: 0;
   border-left: 0;
   border-radius: 10%;
@@ -197,7 +197,7 @@ class Slides extends React.Component {
         </div>
         <Devices>
           <SliderWrapper>
-            <ArrowList>
+            <ArrowList onClick={e => { this.handleClick(e, slideNumber - 1) }}>
               <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
               <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
             </ArrowList>
@@ -207,7 +207,7 @@ class Slides extends React.Component {
                 alt="Liberty statue image"
               />
             </Container>
-            <ArrowList>
+            <ArrowList onClick={e => { this.handleClick(e, slideNumber + 1) }}>
               <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
               <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
             </ArrowList>
