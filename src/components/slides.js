@@ -197,20 +197,24 @@ class Slides extends React.Component {
         </div>
         <Devices>
           <SliderWrapper>
-            <ArrowList onClick={e => { this.handleClick(e, slideNumber - 1) }}>
-              <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
-              <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
-            </ArrowList>
+            { slideNumber > 0 ?
+              <ArrowList onClick={e => { this.handleClick(e, slideNumber - 1) }}>
+                <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
+                <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
+              </ArrowList>
+              : <div></div> }
             <Container>
               <Img
                 fixed={this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed}
                 alt="Liberty statue image"
               />
             </Container>
-            <ArrowList onClick={e => { this.handleClick(e, slideNumber + 1) }}>
-              <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
-              <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
-            </ArrowList>
+            { slideNumber < 2 ?
+              <ArrowList onClick={e => { this.handleClick(e, slideNumber + 1) }}>
+                <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
+                <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
+              </ArrowList>
+              : <div></div> }
           </SliderWrapper>
           <div>
             <Title>{data.data[slideNumber].title}</Title>
