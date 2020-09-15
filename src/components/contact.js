@@ -17,10 +17,9 @@ const Wrapper = styled.div`
 
 const Desktop = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  margin: 0 6rem 5% 6rem;
-  height: 60%;
+  margin: 5% 6rem 5% 6rem;
   @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
     display: none;
   }
@@ -42,13 +41,14 @@ const Container = styled.div`
 const Content = styled.div`
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
 `
 
 const DesktopWrapper = styled.div`
   @media only screen and (min-device-width: 900px) {
     height: 100vh;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-around;
     flex-direction: column;
   }
 `
@@ -114,7 +114,7 @@ const Contact = () => {
       ) {
         nodes {
           childImageSharp {
-            fixed(width: 200, height: 200) {
+            fixed(width: 280, height: 280) {
               ...GatsbyImageSharpFixed
             }
           }
@@ -144,35 +144,29 @@ const Contact = () => {
       </Devices>
       <DesktopWrapper>
         <Desktop>
-          <div>
-            <Title>{data.contact.title}</Title>
-          </div>
           <Content>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-              }}
-            >
-              <div>
-                <Text>{data.contact.text}</Text>
-              </div>
+            <div>
+              <Title>{data.contact.title}</Title>
+              <Text>{data.contact.text}</Text>
+            </div>
+
+
               <div style={{ width: "100%" }} id={"address"} name={"address"}>
                 <Subtitle>{data.contact.telephoneNumber}</Subtitle>
                 <Subtitle>{data.contact.email}</Subtitle>
                 <Adress>{data.contact.adressFirstLine}</Adress>
                 <Adress>{data.contact.adressSecondLine}</Adress>
               </div>
-            </div>
-            <Container>
-              <Img
-                style={{ margin: "2rem 0" }}
-                fixed={query.contactImg.nodes[0].childImageSharp.fixed}
-                alt="E.T. image"
-              />
-            </Container>
+
+
           </Content>
+          <Container>
+            <Img
+              style={{ marginTop: "4rem", display:"flex", justifyContent: "flex-end" }}
+              fixed={query.contactImg.nodes[0].childImageSharp.fixed}
+              alt="E.T. image"
+            />
+          </Container>
         </Desktop>
       </DesktopWrapper>
     </Wrapper>
