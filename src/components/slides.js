@@ -7,24 +7,22 @@ import "../components/slider-component.css"
 
 const Desktop = styled.div`
   display: flex;
-  justify-content: space-evenly;;
-  margin: 0 6rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 5% 6rem 0;
   position: relative;
   overflow: hidden;
-  
-      @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 899px) {
-  display: none;
-}
+
+  @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
+    display: none;
+  }
 `
 const Devices = styled.div`
   margin: 0 2rem;
- 
-    @media only screen 
-  and (min-device-width: 900px) {
+
+  @media only screen and (min-device-width: 900px) {
     display: none;
-}
+  }
 `
 
 const Container = styled.div`
@@ -38,10 +36,10 @@ const ContainerFoto = styled.div`
 `
 
 const SliderWrapper = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-around;
-align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 `
 
 const Title = styled.h1`
@@ -70,27 +68,22 @@ const CirclesSlides = styled.div`
  display: flex;
  justify- content: center;
  flex-direction: column;
-
-  @media only screen 
-  and (min-device-width: 900px) {
-    height: 100vh;
-  }
 `
 
 const ArrowList = styled.ul`
   display: flex;
   margin: 0;
   li {
-    i{
+    i {
       border-color: white;
-    } 
+    }
   }
-  
+
   &:hover {
     li {
-      i{
+      i {
         border-color: #fde300;
-      } 
+      }
     }
   }
 `
@@ -125,6 +118,12 @@ const ArrowLeft = styled.i`
   transform: rotate(225deg);
 `
 
+const Slide = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+`
 
 class Slides extends React.Component {
   state = {
@@ -163,58 +162,77 @@ class Slides extends React.Component {
 
   render() {
     const { slideNumber } = this.state
-    console.log(slideNumber)
     return (
-      <CirclesSlides
-        id={"queHacemos"}
-        name={"queHacemos"}
-      >
-        <div className="slider-circles" style={{ marginLeft: "80%"}}>
-          <div
-            className={
-              slideNumber === 0 ? "slider-circle active" : "slider-circle"
-            }
-            onClick={e => {
-              this.handleClick(e, 0)
-            }}
-          ></div>
-          <div
-            className={
-              slideNumber === 1 ? "slider-circle active" : "slider-circle"
-            }
-            onClick={e => {
-              this.handleClick(e, 1)
-            }}
-          ></div>
-          <div
-            className={
-              slideNumber === 2 ? "slider-circle active" : "slider-circle"
-            }
-            onClick={e => {
-              this.handleClick(e, 2)
-            }}
-          ></div>
-        </div>
+      <CirclesSlides id={"queHacemos"} name={"queHacemos"}>
         <Devices>
+          <div className="slider-circles" style={{ marginLeft: "80%" }}>
+            <div
+              className={
+                slideNumber === 0 ? "slider-circle active" : "slider-circle"
+              }
+              onClick={e => {
+                this.handleClick(e, 0)
+              }}
+            ></div>
+            <div
+              className={
+                slideNumber === 1 ? "slider-circle active" : "slider-circle"
+              }
+              onClick={e => {
+                this.handleClick(e, 1)
+              }}
+            ></div>
+            <div
+              className={
+                slideNumber === 2 ? "slider-circle active" : "slider-circle"
+              }
+              onClick={e => {
+                this.handleClick(e, 2)
+              }}
+            ></div>
+          </div>
           <SliderWrapper>
-            { slideNumber > 0 ?
-              <ArrowList onClick={e => { this.handleClick(e, slideNumber - 1) }}>
-                <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
-                <ArrowLine><ArrowLeft>Left</ArrowLeft></ArrowLine>
+            {slideNumber > 0 ? (
+              <ArrowList
+                onClick={e => {
+                  this.handleClick(e, slideNumber - 1)
+                }}
+              >
+                <ArrowLine>
+                  <ArrowLeft>Left</ArrowLeft>
+                </ArrowLine>
+                <ArrowLine>
+                  <ArrowLeft>Left</ArrowLeft>
+                </ArrowLine>
               </ArrowList>
-              : <div></div> }
+            ) : (
+              <div></div>
+            )}
             <Container>
               <Img
-                fixed={this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed}
+                fixed={
+                  this.props.query.slidesImg.nodes[slideNumber].childImageSharp
+                    .fixed
+                }
                 alt="Liberty statue image"
               />
             </Container>
-            { slideNumber < 2 ?
-              <ArrowList onClick={e => { this.handleClick(e, slideNumber + 1) }}>
-                <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
-                <ArrowLine><ArrowRight>Right</ArrowRight></ArrowLine>
+            {slideNumber < 2 ? (
+              <ArrowList
+                onClick={e => {
+                  this.handleClick(e, slideNumber + 1)
+                }}
+              >
+                <ArrowLine>
+                  <ArrowRight>Right</ArrowRight>
+                </ArrowLine>
+                <ArrowLine>
+                  <ArrowRight>Right</ArrowRight>
+                </ArrowLine>
               </ArrowList>
-              : <div></div> }
+            ) : (
+              <div></div>
+            )}
           </SliderWrapper>
           <div>
             <Title>{data.data[slideNumber].title}</Title>
@@ -223,51 +241,78 @@ class Slides extends React.Component {
             })}
           </div>
         </Devices>
-          { slideNumber === 1 ?
-            <Desktop>
-              <SliderWrapper>
-                <ContainerFoto>
-                  <Img
-                    fixed={
-                      this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed
-                    }
-                    alt="Liberty statue image"
-                  />
-                </ContainerFoto>
-              </SliderWrapper>
-              <Container style={{ maxWidth: "75%", marginLeft: "2rem", alignItems: "flex-end" }}>
-                <Title style={{ textAlign: "right" }}>{data.data[slideNumber].title}</Title>
-                {data.data[slideNumber].text.map((paragraph, key) => {
-                  return <Text style={{ textAlign: "right" }} key={key}>{paragraph}</Text>
-                })}
-              </Container>
-          </Desktop>
-          :
-          <Desktop>
-          <Container style={{ maxWidth: "75%", marginRight: "2rem" }}>
-            <Title>{data.data[slideNumber].title}</Title>
-            {data.data[slideNumber].text.map((paragraph, key) => {
-              return <Text key={key}>{paragraph}</Text>
-            })}
-          </Container>
-          <SliderWrapper>
-            <ContainerFoto>
-              <Img
-                fixed={
-                  this.props.query.slidesImg.nodes[slideNumber].childImageSharp.fixed
-                }
-                alt="Liberty statue image"
-              />
-              <div style={{ position: "relative", width: "100%", height: "3rem", display: "flex", justifyContent: "space-between", padding: "0 1rem" }}>
-
-              </div>
-            </ContainerFoto>
-          </SliderWrapper>
-
-          </Desktop>
-          }
-
-
+        <Desktop>
+          <Slide>
+            <Container style={{ maxWidth: "75%", marginRight: "2rem" }}>
+              <Title>{data.data[0].title}</Title>
+              {data.data[0].text.map((paragraph, key) => {
+                return <Text key={key}>{paragraph}</Text>
+              })}
+            </Container>
+            <SliderWrapper>
+              <ContainerFoto>
+                <Img
+                  fixed={
+                    this.props.query.slidesImg.nodes[0]
+                      .childImageSharp.fixed
+                  }
+                  alt="Liberty statue image"
+                />
+              </ContainerFoto>
+            </SliderWrapper>
+          </Slide>
+          <Slide>
+            <SliderWrapper>
+              <ContainerFoto>
+                <Img
+                  fixed={
+                    this.props.query.slidesImg.nodes[1]
+                      .childImageSharp.fixed
+                  }
+                  alt="Liberty statue image"
+                />
+              </ContainerFoto>
+            </SliderWrapper>
+            <Container
+              style={{
+                maxWidth: "75%",
+                marginLeft: "2rem",
+                alignItems: "flex-end",
+              }}
+            >
+              <Title style={{ textAlign: "right" }}>
+                {data.data[1].title}
+              </Title>
+              {data.data[1].text.map((paragraph, key) => {
+                return (
+                  <Text style={{ textAlign: "right" }} key={key}>
+                    {paragraph}
+                  </Text>
+                )
+              })}
+            </Container>
+          </Slide>
+          <Slide>
+            <Container style={{ maxWidth: "75%", marginRight: "2rem" }}>
+              <Title>{data.data[2].title}</Title>
+              {data.data[2].text.map((paragraph, key) => {
+                return <Text key={key}>{paragraph}</Text>
+              })}
+            </Container>
+            <SliderWrapper>
+              <ContainerFoto>
+                <Img
+                  fixed={
+                    this.props.query.slidesImg.nodes[2]
+                      .childImageSharp.fixed
+                  }
+                  alt="Liberty statue image"
+                />
+              </ContainerFoto>
+            </SliderWrapper>
+          </Slide>
+        </Desktop>
+        }
       </CirclesSlides>
     )
   }

@@ -24,17 +24,17 @@ const MainMessage = styled.div`
   color: white;
   margin: 0rem 2rem 0rem 2rem;
      h1 {
-      line-height: 4rem;
-      font-size: 3rem;
-      font-weight: 700;
+        line-height: 3.3rem;
+        font-size: 2.4rem;
+        font-weight: 700;
     } 
   
       @media only screen 
   and (min-device-width: 900px) {
   margin: 0 6rem;
     h1 {
-      line-height: 4rem;
-      font-size: 4rem;
+      line-height: 7rem;
+      font-size: 6rem;
     } 
   }
 `
@@ -75,6 +75,42 @@ const Wave = styled.div`
     -webkit-transform: rotate(45deg);
     transform: rotate(90deg);
   }
+  
+    @media only screen 
+  and (min-device-width: 900px) {
+    margin-top: 33rem;
+      &:before {
+    content: "";
+    position: absolute;
+    top: -48px;
+    left: -16px;
+    width: 200px;
+    height: 200px;
+    border-radius: 87%;
+    border-left: solid 18px transparent;
+    border-top: solid 18px transparent;
+    border-right: solid 18px currentColor;
+    border-bottom: solid 18px transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(-90deg);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+      top: -178px;
+    left: 111px;
+    width: 200px;
+    height: 200px;
+    border-radius: 87%;
+    border-left: solid 18px transparent;
+    border-top: solid 18px transparent;
+    border-right: solid 18px currentColor;
+    border-bottom: solid 18px transparent;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(90deg);
+  }
+
 `
 
 const IndexPage = () => {

@@ -5,23 +5,32 @@ import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 import Footer from "./footer"
 
+const Wrapper = styled.div`
+        display: flex;
+        flex-direction: column;
+        
+        @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
+        height: 100vh;
+  }
+        
+`
+
 const Desktop = styled.div`
   display: flex;
-  justify-content: space-evenly;;
-  margin: 0 6rem;
-      @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 899px) {
-  display: none;
-}
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 6rem 5% 6rem;
+  height: 60%;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
+    display: none;
+  }
 `
 const Devices = styled.div`
   margin: 0 2rem;
 
-    @media only screen 
-  and (min-device-width: 900px) {
+  @media only screen and (min-device-width: 900px) {
     display: none;
-}
+  }
 `
 
 const Container = styled.div`
@@ -30,20 +39,26 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `
-const FullDiv = styled.div`
-    @media only screen 
-  and (min-device-width: 900px) {
+const Content = styled.div`
   display: flex;
-  height: 100%;
+  justify-content: space-between;
+`
+
+const DesktopWrapper = styled.div`
+  @media only screen and (min-device-width: 900px) {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
   }
 `
 
 const Title = styled.h1`
-color: white;
-font-size 1.6rem;
-font-weight: 550;
-text-align: left;
-width: 100%;
+  color: white;
+  font-size 1.6rem;
+  font-weight: 550;
+  text-align: left;
+  width: 100%;
 
 @media only screen 
   and (min-device-width: 900px) {
@@ -91,61 +106,77 @@ margin: 0;\
 const Contact = () => {
   const query = useStaticQuery(graphql`
     query {
-    contactImg: allFile(
-      filter: { relativePath: {}, relativeDirectory: { eq: "images/contact" } }
-    ) {
-      nodes {
-        childImageSharp {
-          fixed(width: 200, height: 200) {
-            ...GatsbyImageSharpFixed
+      contactImg: allFile(
+        filter: {
+          relativePath: {}
+          relativeDirectory: { eq: "images/contact" }
+        }
+      ) {
+        nodes {
+          childImageSharp {
+            fixed(width: 200, height: 200) {
+              ...GatsbyImageSharpFixed
+            }
           }
         }
       }
     }
-  }
-`
-  )
+  `)
   return (
-    <div id={"contact"} name={"contact"} style={{display: "flex", flexDirection: "column", justifyContent: "spaceBetween", height: "100vh"}}>
-    <Devices>
-      <Container>
-        <Title>{data.contact.title}</Title>
-        <Text>{data.contact.text}</Text>
-        <Img
-          style={{  margin: "2rem 0"}}
-          fixed={query.contactImg.nodes[0].childImageSharp.fixed}
-          alt="E.T. image"/>
+    <Wrapper
+      id={"contact"}
+      name={"contact"}
+    >
+      <Devices>
+        <Container>
+          <Title>{data.contact.title}</Title>
+          <Text>{data.contact.text}</Text>
+          <Img
+            style={{ margin: "2rem 0" }}
+            fixed={query.contactImg.nodes[0].childImageSharp.fixed}
+            alt="E.T. image"
+          />
           <Subtitle>{data.contact.telephoneNumber}</Subtitle>
           <Subtitle>{data.contact.email}</Subtitle>
           <Adress>{data.contact.adressFirstLine}</Adress>
           <Adress>{data.contact.adressSecondLine}</Adress>
-      </Container>
-    </Devices>
-    <FullDiv>
+        </Container>
+      </Devices>
+      <DesktopWrapper>
         <Desktop>
-          <Container style={{paddingRight:"10rem", paddingTop:"4rem"}}>
-            <div>
-              <Title>{data.contact.title}</Title>
-              <Text>{data.contact.text}</Text>
-
+          <div>
+            <Title>{data.contact.title}</Title>
+          </div>
+          <Content>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-evenly",
+              }}
+            >
+              <div>
+                <Text>{data.contact.text}</Text>
+              </div>
+              <div style={{ width: "100%" }} id={"address"} name={"address"}>
+                <Subtitle>{data.contact.telephoneNumber}</Subtitle>
+                <Subtitle>{data.contact.email}</Subtitle>
+                <Adress>{data.contact.adressFirstLine}</Adress>
+                <Adress>{data.contact.adressSecondLine}</Adress>
+              </div>
             </div>
-            <div style={{width: "100%"}} id={"address"} name={"address"}>
-              <Subtitle>{data.contact.telephoneNumber}</Subtitle>
-              <Subtitle>{data.contact.email}</Subtitle>
-              <Adress>{data.contact.adressFirstLine}</Adress>
-              <Adress>{data.contact.adressSecondLine}</Adress>
-            </div>
-          </Container>
-          <Container>
-            <Img
-              style={{  margin: "2rem 0"}}
-              fixed={query.contactImg.nodes[0].childImageSharp.fixed}
-              alt="E.T. image"/>
-          </Container>
+            <Container>
+              <Img
+                style={{ margin: "2rem 0" }}
+                fixed={query.contactImg.nodes[0].childImageSharp.fixed}
+                alt="E.T. image"
+              />
+            </Container>
+          </Content>
         </Desktop>
-      </FullDiv>
-    </div>
+      </DesktopWrapper>
+    </Wrapper>
   )
 }
 
-export default Contact;
+export default Contact

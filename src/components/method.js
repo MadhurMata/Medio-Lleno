@@ -10,7 +10,7 @@ const Desktop = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 6rem;
+  margin: 5% 6rem 0;
       @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 899px) {
