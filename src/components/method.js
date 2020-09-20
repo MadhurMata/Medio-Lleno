@@ -98,6 +98,8 @@ const Subtitle = styled.h1`
   font-size 0.8rem;
   font-weight: 550;
   margin-bottom: 1rem;
+  text-align: left;
+  width: 100%;
   @media only screen 
   and (min-device-width: 900px) {
       font-size: 1.2rem;

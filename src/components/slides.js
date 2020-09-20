@@ -43,7 +43,6 @@ const ContainerDesktop = styled.div`
 const ContainerFoto = styled.div`
   width: 40%;
   height: auto;
-  
 `
 
 const SliderWrapper = styled.div`
@@ -89,13 +88,18 @@ const ArrowList = styled.ul`
       border-color: white;
     }
   }
-
+  
   &:hover {
     li {
       i {
-        border-color: #fde300;
+        animation: myfirst 1s 1;
       }
-    }
+    } 
+  }
+
+  @keyframes myfirst {
+    0%    {border-color: #fde300;
+    100%    {border-color: #fde300;
   }
 `
 
@@ -261,26 +265,24 @@ class Slides extends React.Component {
                 return <Text key={key}>{paragraph}</Text>
               })}
             </ContainerDesktop>
-              <ContainerFoto>
-                <Img
-                  fluid={
-                    this.props.query.slidesImg.nodes[0]
-                      .childImageSharp.fluid
-                  }
-                  alt="Liberty statue image"
-                />
-              </ContainerFoto>
+            <ContainerFoto>
+              <Img
+                fluid={
+                  this.props.query.slidesImg.nodes[0].childImageSharp.fluid
+                }
+                alt="Liberty statue image"
+              />
+            </ContainerFoto>
           </Slide>
           <Slide>
-              <ContainerFoto>
-                <Img
-                  fluid={
-                    this.props.query.slidesImg.nodes[1]
-                      .childImageSharp.fluid
-                  }
-                  alt="Liberty statue image"
-                />
-              </ContainerFoto>
+            <ContainerFoto>
+              <Img
+                fluid={
+                  this.props.query.slidesImg.nodes[1].childImageSharp.fluid
+                }
+                alt="Liberty statue image"
+              />
+            </ContainerFoto>
             <ContainerDesktop
               style={{
                 maxWidth: "75%",
@@ -288,9 +290,7 @@ class Slides extends React.Component {
                 alignItems: "flex-end",
               }}
             >
-              <Title style={{ textAlign: "right" }}>
-                {data.data[1].title}
-              </Title>
+              <Title style={{ textAlign: "right" }}>{data.data[1].title}</Title>
               {data.data[1].text.map((paragraph, key) => {
                 return (
                   <Text style={{ textAlign: "right" }} key={key}>
@@ -307,15 +307,14 @@ class Slides extends React.Component {
                 return <Text key={key}>{paragraph}</Text>
               })}
             </ContainerDesktop>
-              <ContainerFoto>
-                <Img
-                  fluid={
-                    this.props.query.slidesImg.nodes[2]
-                      .childImageSharp.fluid
-                  }
-                  alt="Liberty statue image"
-                />
-              </ContainerFoto>
+            <ContainerFoto>
+              <Img
+                fluid={
+                  this.props.query.slidesImg.nodes[2].childImageSharp.fluid
+                }
+                alt="Liberty statue image"
+              />
+            </ContainerFoto>
           </Slide>
         </Desktop>
         }

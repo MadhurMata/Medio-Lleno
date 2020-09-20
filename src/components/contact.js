@@ -19,7 +19,7 @@ const Desktop = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 5% 6rem 5% 6rem;
+  margin: 5% 6rem 0 6rem;
   @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
     display: none;
   }
@@ -46,10 +46,7 @@ const Content = styled.div`
 
 const DesktopWrapper = styled.div`
   @media only screen and (min-device-width: 900px) {
-    height: 100vh;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
+    height: 74vh;
   }
 `
 
@@ -84,6 +81,7 @@ const Subtitle = styled.h1`
   font-weight: 550;
   width: 100%;
   text-align: left;
+  line-height: 1.8rem;
   margin: 0;
   @media only screen 
   and (min-device-width: 900px) {
@@ -96,7 +94,8 @@ color: #fde300;
 font-size 0.8rem;
 text-align: left;
 width: 100%;
-margin: 0;\
+margin: 0;
+line-height: 1.8rem;
 @media only screen 
   and (min-device-width: 900px) {
       font-size: 1rem;
@@ -114,8 +113,8 @@ const Contact = () => {
       ) {
         nodes {
           childImageSharp {
-            fixed(width: 280, height: 280) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -144,14 +143,14 @@ const Contact = () => {
       </Devices>
       <DesktopWrapper>
         <Desktop>
-          <Content>
+          <Content id={"address"} name={"address"}>
             <div>
               <Title>{data.contact.title}</Title>
               <Text>{data.contact.text}</Text>
             </div>
 
 
-              <div style={{ width: "100%" }} id={"address"} name={"address"}>
+              <div style={{ width: "100%" }}>
                 <Subtitle>{data.contact.telephoneNumber}</Subtitle>
                 <Subtitle>{data.contact.email}</Subtitle>
                 <Adress>{data.contact.adressFirstLine}</Adress>
@@ -160,10 +159,10 @@ const Contact = () => {
 
 
           </Content>
-          <Container>
+          <Container style={{width: "100%", maxWidth: "500px"}}>
             <Img
-              style={{ marginTop: "4rem", display:"flex", justifyContent: "flex-end" }}
-              fixed={query.contactImg.nodes[0].childImageSharp.fixed}
+              style={{ marginTop: "4rem", display:"flex", justifyContent: "flex-end", width: "100%", height: "auto" }}
+              fluid={query.contactImg.nodes[0].childImageSharp.fluid}
               alt="E.T. image"
             />
           </Container>

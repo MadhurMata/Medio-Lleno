@@ -13,6 +13,20 @@
     margin: 0px 5px;
 }
 
+.slider-circle:hover {
+    animation: myfirst 1s 1;
+}
+
+@keyframes myfirst
+{
+    0% {
+        border-color: #fde300;
+    }
+    100% {
+        border-color: #fde300;
+    }
+}
+
 .active.slider-circle{
     background-color: white;
 }
