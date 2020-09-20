@@ -30,9 +30,20 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  width: 60%;
+`
+
+const ContainerDesktop = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%;
 `
 const ContainerFoto = styled.div`
-  margin: 2rem;
+  width: 40%;
+  height: auto;
+  
 `
 
 const SliderWrapper = styled.div`
@@ -210,9 +221,10 @@ class Slides extends React.Component {
             )}
             <Container>
               <Img
-                fixed={
+                style={{ width: "100%", height: "auto" }}
+                fluid={
                   this.props.query.slidesImg.nodes[slideNumber].childImageSharp
-                    .fixed
+                    .fluid
                 }
                 alt="Liberty statue image"
               />
@@ -243,37 +255,33 @@ class Slides extends React.Component {
         </Devices>
         <Desktop>
           <Slide>
-            <Container style={{ maxWidth: "75%", marginRight: "2rem" }}>
+            <ContainerDesktop>
               <Title>{data.data[0].title}</Title>
               {data.data[0].text.map((paragraph, key) => {
                 return <Text key={key}>{paragraph}</Text>
               })}
-            </Container>
-            <SliderWrapper>
+            </ContainerDesktop>
               <ContainerFoto>
                 <Img
-                  fixed={
+                  fluid={
                     this.props.query.slidesImg.nodes[0]
-                      .childImageSharp.fixed
+                      .childImageSharp.fluid
                   }
                   alt="Liberty statue image"
                 />
               </ContainerFoto>
-            </SliderWrapper>
           </Slide>
           <Slide>
-            <SliderWrapper>
               <ContainerFoto>
                 <Img
-                  fixed={
+                  fluid={
                     this.props.query.slidesImg.nodes[1]
-                      .childImageSharp.fixed
+                      .childImageSharp.fluid
                   }
                   alt="Liberty statue image"
                 />
               </ContainerFoto>
-            </SliderWrapper>
-            <Container
+            <ContainerDesktop
               style={{
                 maxWidth: "75%",
                 marginLeft: "2rem",
@@ -290,26 +298,24 @@ class Slides extends React.Component {
                   </Text>
                 )
               })}
-            </Container>
+            </ContainerDesktop>
           </Slide>
           <Slide>
-            <Container style={{ maxWidth: "75%", marginRight: "2rem" }}>
+            <ContainerDesktop style={{ maxWidth: "75%", marginRight: "2rem" }}>
               <Title>{data.data[2].title}</Title>
               {data.data[2].text.map((paragraph, key) => {
                 return <Text key={key}>{paragraph}</Text>
               })}
-            </Container>
-            <SliderWrapper>
+            </ContainerDesktop>
               <ContainerFoto>
                 <Img
-                  fixed={
+                  fluid={
                     this.props.query.slidesImg.nodes[2]
-                      .childImageSharp.fixed
+                      .childImageSharp.fluid
                   }
                   alt="Liberty statue image"
                 />
               </ContainerFoto>
-            </SliderWrapper>
           </Slide>
         </Desktop>
         }

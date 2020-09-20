@@ -24,7 +24,7 @@ const MainMessage = styled.div`
   color: white;
   margin: 0rem 2rem 0rem 2rem;
      h1 {
-        line-height: 3.3rem;
+        line-height: 4.3rem;
         font-size: 2.4rem;
         font-weight: 700;
     } 
@@ -42,7 +42,7 @@ const MainMessage = styled.div`
 const Wave = styled.div`
   color: #fde300;
   position: absolute;
-  margin-top: 21rem;
+  margin-top: 25rem;
 
   &:before {
     content: "";
@@ -121,14 +121,15 @@ const IndexPage = () => {
       ) {
         nodes {
           childImageSharp {
-            fixed(width: 200, height: 220) {
-              ...GatsbyImageSharpFixed
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
       }
     }
   `)
+      console.log(query);
     return (
       <Layout>
         <Content>

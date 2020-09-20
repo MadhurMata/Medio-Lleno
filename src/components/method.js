@@ -115,12 +115,10 @@ const Text = styled.p`
 `
 
 const Arrow = styled.div`
-  margin-left: 3rem;
-  width: 300px;
+  width: 200px;
 `
 const ArrowLeft = styled.div`
-  margin-right: 4rem;
-  width: 300px;
+  width: 200px;
   transform: rotateY(180deg); 
 `
 
@@ -166,7 +164,7 @@ const RightArrow = styled.i`
 `
 
 const Method = () => {
-  const arrowRight = <svg viewBox="-10 0 600 210">
+  const arrowRight = <svg viewBox="-10 0 385 210">
     <path
       d="M 0 0, Q 0 50 50 50, H300,M 300   50, Q 350 50 350 100,M 351 102,L 330 85,M 349 102, L 369 85" fill="transparent" stroke="#fde300"   strokeWidth="3"/>
   </svg>
