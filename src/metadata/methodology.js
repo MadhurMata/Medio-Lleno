@@ -5,15 +5,15 @@ module.exports.methodology = {
   stages: [
     {
       title: "01. Análisis:",
-      text: "Realizamos estudios en profundidad con el objetivo de detectar las mejores oportunidades.",
+      text: "Realizamos estudios en profundidad para detectar las mejores oportunidades.",
     },
     {
       title: "02. Estrategia:",
-      text: "Trazamos estrategias en base a los análisis realizados que nos permitan enfocar el proyecto de una forma única.",
+      text: "Trazamos estrategias que nos permitan enfocar el proyecto de una forma única.",
     },
     {
       title: "03. Desarrollo:",
-      text: "Seguimos nuestro modelo de comunicación para llegar a soluciones creativas más eficientes y originales.",
+      text: "Seguimos nuestro modelo para llegar a soluciones más creativas eficientes y originales.",
     },
     {
       title: "04. Producción:",

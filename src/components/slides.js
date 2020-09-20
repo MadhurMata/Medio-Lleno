@@ -9,7 +9,7 @@ const Desktop = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: 5% 6rem 0;
+  margin: 5% 10rem 0;
   position: relative;
   overflow: hidden;
 
@@ -19,7 +19,7 @@ const Desktop = styled.div`
 `
 const Devices = styled.div`
   margin: 0 2rem;
-
+    margin-bottom: 2rem;
   @media only screen and (min-device-width: 900px) {
     display: none;
   }
@@ -39,9 +39,11 @@ const ContainerDesktop = styled.div`
   justify-content: center;
   align-items: flex-start;
   width: 60%;
+  
 `
 const ContainerFoto = styled.div`
-  width: 40%;
+  width: 38%;
+  min-width: 500px
   height: auto;
 `
 
@@ -55,7 +57,8 @@ const SliderWrapper = styled.div`
 const Title = styled.h1`
   color: white;
   padding-top: 1rem;
-  font-size 1.6rem;
+  font-size: 1.4rem;
+  line-height: 1.3;
   font-weight: 550;
   
   @media only screen 
@@ -216,9 +219,6 @@ class Slides extends React.Component {
                 <ArrowLine>
                   <ArrowLeft>Left</ArrowLeft>
                 </ArrowLine>
-                <ArrowLine>
-                  <ArrowLeft>Left</ArrowLeft>
-                </ArrowLine>
               </ArrowList>
             ) : (
               <div></div>
@@ -242,9 +242,6 @@ class Slides extends React.Component {
                 <ArrowLine>
                   <ArrowRight>Right</ArrowRight>
                 </ArrowLine>
-                <ArrowLine>
-                  <ArrowRight>Right</ArrowRight>
-                </ArrowLine>
               </ArrowList>
             ) : (
               <div></div>
@@ -259,7 +256,7 @@ class Slides extends React.Component {
         </Devices>
         <Desktop>
           <Slide>
-            <ContainerDesktop>
+            <ContainerDesktop style={{ maxWidth: "75%", marginRight: "3rem" }}>
               <Title>{data.data[0].title}</Title>
               {data.data[0].text.map((paragraph, key) => {
                 return <Text key={key}>{paragraph}</Text>
@@ -286,7 +283,7 @@ class Slides extends React.Component {
             <ContainerDesktop
               style={{
                 maxWidth: "75%",
-                marginLeft: "2rem",
+                marginLeft: "3.2rem",
                 alignItems: "flex-end",
               }}
             >
@@ -301,7 +298,7 @@ class Slides extends React.Component {
             </ContainerDesktop>
           </Slide>
           <Slide>
-            <ContainerDesktop style={{ maxWidth: "75%", marginRight: "2rem" }}>
+            <ContainerDesktop style={{ maxWidth: "75%", marginRight: "3.2rem" }}>
               <Title>{data.data[2].title}</Title>
               {data.data[2].text.map((paragraph, key) => {
                 return <Text key={key}>{paragraph}</Text>

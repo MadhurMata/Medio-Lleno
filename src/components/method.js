@@ -10,7 +10,7 @@ const Desktop = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5% 6rem 0;
+  margin: 5% 10rem 0;
       @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 899px) {
@@ -18,6 +18,7 @@ const Desktop = styled.div`
 }
 `
 const Devices = styled.div`
+    margin-bottom: 2rem;
     @media only screen 
   and (min-device-width: 900px) {
     display: none;
@@ -36,6 +37,7 @@ const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: flex-start;
+  margin-bottom: 2rem;
         @media only screen 
   and (min-device-width: 320px) 
   and (max-device-width: 899px) {
@@ -85,7 +87,7 @@ const SubStageContainer2 = styled.div`
 
 const Title = styled.h1`
   color: white;
-  font-size: 1.7rem;
+   font-size: 1.4rem;
   font-weight: 550;
   
   @media only screen 
@@ -129,6 +131,7 @@ const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 3rem;
+  width: 200px;
 `
 
 const RightArrow = styled.i`
@@ -166,7 +169,7 @@ const RightArrow = styled.i`
 `
 
 const Method = () => {
-  const arrowRight = <svg viewBox="-10 0 385 210">
+  const arrowRight = <svg viewBox="-10 0 385 105">
     <path
       d="M 0 0, Q 0 50 50 50, H300,M 300   50, Q 350 50 350 100,M 351 102,L 330 85,M 349 102, L 369 85" fill="transparent" stroke="#fde300"   strokeWidth="3"/>
   </svg>
@@ -194,7 +197,7 @@ const Method = () => {
           <Container>
             <Title>{data.methodology.title}</Title>
             <Text>{data.methodology.text}</Text>
-            <Subtitle>{data.methodology.subtitle}</Subtitle>
+            <Subtitle style={{marginBottom: "2rem"}}>{data.methodology.subtitle}</Subtitle>
           </Container>
           <Stages>
             <StageContainer>
@@ -210,7 +213,7 @@ const Method = () => {
             <Arrow>{arrowRight}</Arrow>
             <StageContainer>
               <SubStageContainer2>
-                <Subtitle>{data.methodology.stages[1].title}</Subtitle>
+                <Subtitle style={{width:"100%", textAlign:"right"}}>{data.methodology.stages[1].title}</Subtitle>
                 <Text>{data.methodology.stages[1].text}</Text>
               </SubStageContainer2>
               <Img
@@ -233,8 +236,8 @@ const Method = () => {
             <StageContainer>
 
               <SubStageContainer>
-                <Subtitle>{data.methodology.stages[3].title}</Subtitle>
-                <Text>{data.methodology.stages[3].text}</Text>
+                <Subtitle style={{width:"100%", textAlign:"right"}}>{data.methodology.stages[3].title}</Subtitle>
+                <Text style={{width:"100%", textAlign:"right"}}>{data.methodology.stages[3].text}</Text>
               </SubStageContainer>
               <Img
                 fixed={query.methodImg.nodes[3].childImageSharp.fixed}
@@ -255,8 +258,8 @@ const Method = () => {
             <Arrow>{arrowRight}</Arrow>
             <StageContainer>
               <SubStageContainer>
-                <Subtitle>{data.methodology.stages[5].title}</Subtitle>
-                <Text>{data.methodology.stages[5].text}</Text>
+                <Subtitle style={{width:"100%", textAlign:"right"}}>{data.methodology.stages[5].title}</Subtitle>
+                <Text style={{width:"100%", textAlign:"right"}}>{data.methodology.stages[5].text}</Text>
               </SubStageContainer>
               <Img
                 fixed={query.methodImg.nodes[5].childImageSharp.fixed}

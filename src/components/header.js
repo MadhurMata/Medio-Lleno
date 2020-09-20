@@ -129,7 +129,7 @@ const Header = () => {
           <Desktop>
             <NavBar>
               <li><AnchorLink to="/#hey">Home</AnchorLink></li>
-              <li><AnchorLink to="/#queHacemos">¿Que hacemos?</AnchorLink></li>
+              <li><AnchorLink to="/#queHacemos">¿Qué hacemos?</AnchorLink></li>
               <li><AnchorLink to="/#method">Metodología</AnchorLink></li>
               <li><AnchorLink to="/#address">Contacto</AnchorLink></li>
             </NavBar>

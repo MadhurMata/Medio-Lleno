@@ -19,7 +19,7 @@ const Desktop = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 5% 6rem 0 6rem;
+  margin: 5% 10rem 0 10rem;
   @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
     display: none;
   }
@@ -77,27 +77,29 @@ width: 100%;
 `
 const Subtitle = styled.h1`
   color: white;
-  font-size 0.8rem;
+  font-size 0.7rem;
   font-weight: 550;
   width: 100%;
   text-align: left;
-  line-height: 1.8rem;
+  line-height: 1.3rem;
   margin: 0;
   @media only screen 
   and (min-device-width: 900px) {
       font-size: 1rem;
+  line-height: 1.8rem;
   }
 `
 
 const Adress = styled.p`
 color: #fde300;
-font-size 0.8rem;
+font-size 0.7rem;
 text-align: left;
 width: 100%;
+line-height: 1.3rem;
 margin: 0;
-line-height: 1.8rem;
 @media only screen 
   and (min-device-width: 900px) {
+    line-height: 1.8rem;
       font-size: 1rem;
   }
 `
@@ -122,17 +124,14 @@ const Contact = () => {
     }
   `)
   return (
-    <Wrapper
-      id={"contact"}
-      name={"contact"}
-    >
+    <>
       <Devices>
         <Container>
           <Title>{data.contact.title}</Title>
           <Text>{data.contact.text}</Text>
           <Img
-            style={{ margin: "2rem 0" }}
-            fixed={query.contactImg.nodes[0].childImageSharp.fixed}
+            style={{ margin: "2rem 0", width: "100%", height: "auto" }}
+            fluid={query.contactImg.nodes[0].childImageSharp.fluid}
             alt="E.T. image"
           />
           <Subtitle>{data.contact.telephoneNumber}</Subtitle>
@@ -141,6 +140,10 @@ const Contact = () => {
           <Adress>{data.contact.adressSecondLine}</Adress>
         </Container>
       </Devices>
+    <Wrapper
+      id={"contact"}
+      name={"contact"}
+    >
       <DesktopWrapper>
         <Desktop>
           <Content id={"address"} name={"address"}>
@@ -169,6 +172,7 @@ const Contact = () => {
         </Desktop>
       </DesktopWrapper>
     </Wrapper>
+      </>
   )
 }
 

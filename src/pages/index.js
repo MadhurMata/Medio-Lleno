@@ -17,24 +17,40 @@ const Content = styled.div`
 }
 `
 
+const Desktop = styled.div`
+  @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
+    display: none;
+  }
+`
+const Devices = styled.div`
+  margin: 0 2rem;
+  @media only screen and (min-device-width: 900px) {
+    display: none;
+  }
+`
+
 const MainMessage = styled.div`
   display: flex;
-  align-items: center;
+  align-items: start-end;
+  flex-direction: column;
   height: 100vh;
   color: white;
-  margin: 0rem 2rem 0rem 2rem;
+  margin: 0;
      h1 {
-        line-height: 4.3rem;
-        font-size: 2.4rem;
+        line-height: 3.5rem;
+        font-size: 3.2rem;
         font-weight: 700;
+        margin: 0;
     } 
   
       @media only screen 
   and (min-device-width: 900px) {
-  margin: 0 6rem;
+  margin: 0 10rem;
     h1 {
-      line-height: 7rem;
-      font-size: 6rem;
+      line-height: 4.8rem;
+      font-size: 4.6rem;
+      margin: 0;
+
     } 
   }
 `
@@ -42,7 +58,7 @@ const MainMessage = styled.div`
 const Wave = styled.div`
   color: #fde300;
   position: absolute;
-  margin-top: 25rem;
+  margin-top: 33rem;
 
   &:before {
     content: "";
@@ -132,11 +148,28 @@ const IndexPage = () => {
       console.log(query);
     return (
       <Layout>
-        <Content>
+        <Devices>
           <MainMessage id={"hey"} name={"hey"}>
-              <h1>Bien Hecho<br/>es mejor que<br/>bien dicho.</h1>
+            <h1 style={{    marginTop: "56%"
+            }}>Bien</h1>
+            <h1>hecho</h1>
+            <h1>es mejor</h1>
+            <h1 style={{  lineHeight: "4.3rem;"}}>que bien</h1>
+            <h1 style={{  lineHeight: "5.3rem"}}>dicho.</h1>
+            <Wave></Wave>
+          </MainMessage>
+        </Devices>
+        <Desktop>
+          <MainMessage id={"hey"} name={"hey"}>
+              <h1 style={{  lineHeight: "5.2rem",   marginTop: "20%"
+              }}>Bien hecho</h1>
+              <h1 style={{  lineHeight: "4.3rem",   marginTop: "20%"
+              }}>es mejor que</h1>
+              <h1 style={{  lineHeight: "7.8rem"}}>bien dicho.</h1>
               <Wave></Wave>
           </MainMessage>
+        </Desktop>
+        <Content>
           <Slides query={query}></Slides>
           <Method></Method>
           <Contact></Contact>
