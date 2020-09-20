@@ -163,8 +163,7 @@ const IndexPage = () => {
           <MainMessage id={"hey"} name={"hey"}>
               <h1 style={{  lineHeight: "5.2rem",   marginTop: "20%"
               }}>Bien hecho</h1>
-              <h1 style={{  lineHeight: "4.3rem",   marginTop: "20%"
-              }}>es mejor que</h1>
+              <h1 style={{  lineHeight: "4.3rem"}}>es mejor que</h1>
               <h1 style={{  lineHeight: "7.8rem"}}>bien dicho.</h1>
               <Wave></Wave>
           </MainMessage>
