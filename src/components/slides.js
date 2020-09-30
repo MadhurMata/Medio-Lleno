@@ -9,18 +9,18 @@ const Desktop = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  margin: 5% 10rem 0;
+  margin: 5% 15% 0;
   position: relative;
   overflow: hidden;
 
-  @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
+  @media only screen and (max-device-width: 999px) {
     display: none;
   }
 `
 const Devices = styled.div`
   margin: 0 2rem;
     margin-bottom: 2rem;
-  @media only screen and (min-device-width: 900px) {
+  @media only screen and (min-device-width: 1000px) {
     display: none;
   }
 `
@@ -62,7 +62,7 @@ const Title = styled.h1`
   font-weight: 550;
   
   @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
       font-size: 2.5rem;    
   }
 `
@@ -72,7 +72,7 @@ color: white;
 font-size 0.8rem;
 
   @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
       font-size: 1rem;    
   }
 `
@@ -140,7 +140,7 @@ const Slide = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
 `
 
 class Slides extends React.Component {
@@ -314,7 +314,6 @@ class Slides extends React.Component {
             </ContainerFoto>
           </Slide>
         </Desktop>
-        }
       </CirclesSlides>
     )
   }

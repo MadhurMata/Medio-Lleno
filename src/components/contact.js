@@ -8,26 +8,25 @@ import Footer from "./footer"
 const Wrapper = styled.div`
         display: flex;
         flex-direction: column;
-        
-        @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
-        height: 100vh;
-  }
-        
 `
 
 const Desktop = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 5% 10rem 0 10rem;
-  @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
+  margin: 5% 15% 0;
+  @media only screen and (min-device-width: 320px) and (max-device-width: 999px) {
     display: none;
+  }
+      @media only screen 
+  and (min-device-width: 1800px) {
+  max-width: 1800px;
   }
 `
 const Devices = styled.div`
   margin: 0 2rem;
 
-  @media only screen and (min-device-width: 900px) {
+  @media only screen and (min-device-width: 1000px) {
     display: none;
   }
 `
@@ -45,7 +44,7 @@ const Content = styled.div`
 `
 
 const DesktopWrapper = styled.div`
-  @media only screen and (min-device-width: 900px) {
+  @media only screen and (min-device-width: 1000px) {
     height: 74vh;
   }
 `
@@ -58,7 +57,7 @@ const Title = styled.h1`
   width: 100%;
 
 @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
       font-size: 2.5rem;    
   }
 
@@ -71,7 +70,7 @@ text-align: left;
 width: 100%;
 
 @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
       font-size: 1rem;
   }
 `
@@ -84,7 +83,7 @@ const Subtitle = styled.h1`
   line-height: 1.3rem;
   margin: 0;
   @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
       font-size: 1rem;
   line-height: 1.8rem;
   }
@@ -98,7 +97,7 @@ width: 100%;
 line-height: 1.3rem;
 margin: 0;
 @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
     line-height: 1.8rem;
       font-size: 1rem;
   }
@@ -126,8 +125,8 @@ const Contact = () => {
   return (
     <>
       <Devices>
-        <Container>
-          <Title>{data.contact.title}</Title>
+        <Container style={{marginBottom: "2rem"}}>
+          <Title id={"contact"} name={"contact"}>{data.contact.title}</Title>
           <Text>{data.contact.text}</Text>
           <Img
             style={{ margin: "2rem 0", width: "100%", height: "auto" }}
@@ -140,10 +139,7 @@ const Contact = () => {
           <Adress>{data.contact.adressSecondLine}</Adress>
         </Container>
       </Devices>
-    <Wrapper
-      id={"contact"}
-      name={"contact"}
-    >
+    <Wrapper>
       <DesktopWrapper>
         <Desktop>
           <Content id={"address"} name={"address"}>

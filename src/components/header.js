@@ -18,14 +18,14 @@ const Desktop = styled.div`
   
       @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 899px) {
+  and (max-device-width: 999px) {
   display: none;
 }
 `
 const Devices = styled.div`
    margin-right: 2rem;
     @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
     display: none;
 }
 `
@@ -37,6 +37,11 @@ position: fixed;
 z-index: 112;
 width: 100vw;
 background-color: #13c1b5;
+
+       @media only screen
+ and (min-device-width: 1800px) {
+    max-width: 1800px;
+  }
 `
 
 const BurguerMenu = styled.div`
@@ -44,9 +49,13 @@ const BurguerMenu = styled.div`
 
 const ImageWrapper = styled.div`
     @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
     margin-left: 5rem;
 }
+       @media only screen
+ and (min-device-width: 1800px) {
+    max-width: 1800px;
+  }
 `
 
 const NavBar = styled.ul`

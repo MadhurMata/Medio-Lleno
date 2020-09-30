@@ -13,18 +13,37 @@ import styled from "@emotion/styled"
 
 const Content = styled.div`
     @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
 }
-`
 
+`
+const IndexWrapper = styled.div`
+     @media only screen
+ and (min-device-width: 1800px) {
+    max-width: 1800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-item: center;
+  }
+
+`
 const Desktop = styled.div`
-  @media only screen and (min-device-width: 320px) and (max-device-width: 899px) {
+  height: 100vh;
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media only screen and (max-device-width: 999px) {
     display: none;
   }
 `
 const Devices = styled.div`
   margin: 0 2rem;
-  @media only screen and (min-device-width: 900px) {
+   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media only screen and (min-device-width: 1000px) {
     display: none;
   }
 `
@@ -33,24 +52,22 @@ const MainMessage = styled.div`
   display: flex;
   align-items: start-end;
   flex-direction: column;
-  height: 100vh;
   color: white;
-  margin: 0;
+  margin: 3rem 0 0 0;
      h1 {
         line-height: 3.5rem;
-        font-size: 3.2rem;
+        font-size: 2.9rem;
         font-weight: 700;
         margin: 0;
     } 
   
       @media only screen 
-  and (min-device-width: 900px) {
-  margin: 0 10rem;
+  and (min-device-width: 1000px) {
+  margin: 0 15%;
     h1 {
       line-height: 4.8rem;
       font-size: 4.6rem;
       margin: 0;
-
     } 
   }
 `
@@ -58,8 +75,7 @@ const MainMessage = styled.div`
 const Wave = styled.div`
   color: #fde300;
   position: absolute;
-  margin-top: 33rem;
-
+  margin-top: 4rem;
   &:before {
     content: "";
     position: absolute;
@@ -93,8 +109,8 @@ const Wave = styled.div`
   }
   
     @media only screen 
-  and (min-device-width: 900px) {
-    margin-top: 33rem;
+  and (min-device-width: 1000px) {
+    margin-top: 0;
       &:before {
     content: "";
     position: absolute;
@@ -148,31 +164,36 @@ const IndexPage = () => {
       console.log(query);
     return (
       <Layout>
-        <Devices>
-          <MainMessage id={"hey"} name={"hey"}>
-            <h1 style={{    marginTop: "56%"
-            }}>Bien</h1>
-            <h1>hecho</h1>
-            <h1>es mejor</h1>
-            <h1 style={{  lineHeight: "4.3rem;"}}>que bien</h1>
-            <h1 style={{  lineHeight: "5.3rem"}}>dicho.</h1>
-            <Wave></Wave>
-          </MainMessage>
-        </Devices>
-        <Desktop>
-          <MainMessage id={"hey"} name={"hey"}>
+        <IndexWrapper id={"hey"} name={"hey"}>
+          <Devices>
+            <MainMessage>
+              <h1>Bien</h1>
+              <h1>hecho</h1>
+              <h1>es mejor</h1>
+              <h1 style={{  lineHeight: "4.3rem;"}}>que bien</h1>
+              <h1 style={{  lineHeight: "5.3rem"}}>dicho.</h1>
+            </MainMessage>
+            <div>
+              <Wave></Wave>
+            </div>
+          </Devices>
+          <Desktop>
+            <MainMessage>
               <h1 style={{  lineHeight: "5.2rem",   marginTop: "20%"
               }}>Bien hecho</h1>
               <h1 style={{  lineHeight: "4.3rem"}}>es mejor que</h1>
               <h1 style={{  lineHeight: "7.8rem"}}>bien dicho.</h1>
-              <Wave></Wave>
-          </MainMessage>
-        </Desktop>
-        <Content>
-          <Slides query={query}></Slides>
-          <Method></Method>
-          <Contact></Contact>
-        </Content>
+              <div style={{  marginTop: "4rem"}}>
+                <Wave></Wave>
+              </div>
+            </MainMessage>
+          </Desktop>
+          <Content>
+            <Slides query={query}></Slides>
+            <Method></Method>
+            <Contact></Contact>
+          </Content>
+        </IndexWrapper>
       </Layout>
     )
 

@@ -10,17 +10,21 @@ const Desktop = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 5% 10rem 0;
+  margin: 5% 15% 0;
       @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 899px) {
+  and (max-device-width: 999px) {
   display: none;
 }
+  @media only screen
+ and (min-device-width: 1800px) {
+    max-width: 1800px;
+  }
 `
 const Devices = styled.div`
     margin-bottom: 2rem;
     @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
     display: none;
 }
 `
@@ -40,7 +44,7 @@ const Container = styled.div`
   margin-bottom: 2rem;
         @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 899px) {
+  and (max-device-width: 999px) {
     margin: 0 2rem;
 }
 `
@@ -52,7 +56,7 @@ const Stages = styled.div`
 
 @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 899px)
+  and (max-device-width: 999px)
   and (-webkit-min-device-pixel-ratio: 2) {
   max-width: 360px;
   display: flex;
@@ -91,7 +95,7 @@ const Title = styled.h1`
   font-weight: 550;
   
   @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
       font-size: 2.5rem;    
   }
 `
@@ -103,7 +107,7 @@ const Subtitle = styled.h1`
   text-align: left;
   width: 100%;
   @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
       font-size: 1.2rem;
       margin-top: 1rem;    
   }
@@ -113,7 +117,7 @@ const Text = styled.p`
   color: white;
   font-size 0.8rem;
   @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
       font-size: 1rem;    
   }
 `
@@ -130,7 +134,7 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 3rem;
+  margin: 0 1rem;
   width: 200px;
 `
 

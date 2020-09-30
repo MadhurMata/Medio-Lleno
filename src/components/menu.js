@@ -21,6 +21,7 @@ const StyledMenu = styled.div`
   @media  {
     width: 100%;
   }
+  
 `
 
 const Nav = styled.nav`

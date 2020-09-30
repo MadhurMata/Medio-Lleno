@@ -6,16 +6,17 @@ import data from "../metadata/contact"
 
 const Desktop = styled.div`
   height: 4rem;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   background-color: white;  
   z-index: 100;
-    
+  position: absolute;
+  left: 0;
   @media only screen 
   and (min-device-width: 320px) 
-  and (max-device-width: 899px) {
+  and (max-device-width: 999px) {
   display: none;
 }
 `
@@ -29,7 +30,7 @@ const Devices = styled.div`
   background-color: white;  
   
     @media only screen 
-  and (min-device-width: 900px) {
+  and (min-device-width: 1000px) {
     display: none;
 }
 `
@@ -78,7 +79,7 @@ const Footer = () => {
     }
   `)
   return (
-    <div id={"footer"} name={"footer"}>
+    <footer id={"footer"} name={"footer"}>
       <Devices>
         <Container>
           {query.footerImg.nodes.map((node, key)=>{
@@ -114,7 +115,7 @@ const Footer = () => {
           <div id="ttt"></div>
         </Container>
       </Desktop>
-    </div>
+    </footer>
   )
 }
 

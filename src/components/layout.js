@@ -14,9 +14,10 @@ import styled from "@emotion/styled"
 import Footer from "./footer"
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    @media only screen
+  and (min-device-width: 1800px) {
+    max-width: 1800px;
+  }
 `
 
 
