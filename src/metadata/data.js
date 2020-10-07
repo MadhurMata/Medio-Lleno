@@ -18,7 +18,7 @@ module.exports.data = [
     title:
       "Creamos campañas de comunicación a través de los productos y servicios de una marca.",
     text: [
-      "Siguiendo nuestro modelo y aplicando todas las herramientas de la comunicacion y el diseño. Somos capaces de generar valor de marca, comunicar un mensaje, aportar una experiencia y seguir unos objetivos de negocio."
+      "Siguiendo nuestro modelo y aplicando todas las herramientas de la comunicación y el diseño, desarrollamos productos y servicios como vehículos de comunicación. Capaces de generar valor de marca, comunicar un mensaje, aportar una experiencia y seguir unos objetivos de negocio."
     ]
   }
 ]

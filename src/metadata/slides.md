@@ -1,6 +1,6 @@
 ---
 title: "Primer-slide"
-text: "La relación de las marcas con las personas ya no se basa en un sistema exclusivo de venta o información. 
+text: "La relación de las marcas con las personas ya no se basa en un intercambio comercial. 
         Es algo más complejo."
 ---
 

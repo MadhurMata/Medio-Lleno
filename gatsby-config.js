@@ -2,7 +2,10 @@ module.exports = {
   siteMetadata: {
     title: `Medio Lleno`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@madhurmata`,
+    keywords: `comunicación, , Ware Helden`,
+    siteUrl: 'https://mediolleno.es',
+
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,6 +25,14 @@ module.exports = {
       options: {
         offset: -100
       }
+    },
+    {
+      resolve: `gatsby-plugin-mailgo`,
+      options: {
+        mailgoConfig: {
+          dark: true,
+        },
+      },
     },
     {
       resolve: `gatsby-plugin-manifest`,

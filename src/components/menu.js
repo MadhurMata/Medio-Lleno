@@ -84,22 +84,22 @@ const Menu = ({ open, setOpen, img }) => {
             alt="Home logo"
           />
         </Link>
-        <Link to="queHacemos" offset={-100} onClick={() => setOpen(!open)}><p>¿Que hacemos?</p>
+        <Link to="queHacemos" offset={-100} onClick={() => setOpen(!open)}><p>¿Qué hacemos?</p>
           <Img
-            fixed={query.navImg.nodes[3].childImageSharp.fixed}
+            fixed={query.navImg.nodes[1].childImageSharp.fixed}
             alt="Que hacemos logo"
           />
         </Link>
 
         <Link to="method" offset={-100} onClick={() => setOpen(!open)}><p>Metodología</p>
           <Img
-            fixed={query.navImg.nodes[1].childImageSharp.fixed}
+            fixed={query.navImg.nodes[2].childImageSharp.fixed}
             alt="Metodología logo"
           />
         </Link>
         <Link to="contact" offset={-100} onClick={() => setOpen(!open)}><p>Contacto</p>
           <Img
-            fixed={query.navImg.nodes[2].childImageSharp.fixed}
+            fixed={query.navImg.nodes[3].childImageSharp.fixed}
             alt="Contacto logo"
           />
         </Link>

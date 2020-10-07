@@ -49,7 +49,7 @@ const ContainerTexts = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
-  p {
+  a {
     color: #13c1b5;
     margin-left: 2rem;
     margin-bottom: 0;
@@ -62,7 +62,8 @@ const ImgContainer = styled.div`
 `
 
 const Footer = () => {
-  const media = ["Email", "Instagram", "LinkedIn"]
+  const mediaLinks  = ["ingo@mediolleno.com", "https://www.linkedin.com/company/medio-lleno"]
+  const media = ["Email", "LinkedIn"]
   const query = useStaticQuery(graphql`
     query {
       footerImg: allFile(
@@ -82,28 +83,30 @@ const Footer = () => {
     <footer id={"footer"} name={"footer"}>
       <Devices>
         <Container>
-          {query.footerImg.nodes.map((node, key)=>{
-            return (
               <ImgContainer>
-                <Link key={key} to="/" style={{ textDecoration: `none` }}>
+                <Link to="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer">
                   <Img
-                    fixed={query.footerImg.nodes[key].childImageSharp.fixed}
-                    alt={`${media[key]} logo`}/>
+                    fixed={query.footerImg.nodes[1].childImageSharp.fixed}
+                    alt={`${media[0]} logo`}/>
+                </Link>
+                <Link to={mediaLinks[1]} style={{ textDecoration: `none` }}>
+                  <Img
+                    fixed={query.footerImg.nodes[0].childImageSharp.fixed}
+                    alt={`${media[1]} logo`}/>
                 </Link>
               </ImgContainer>
-            )
-          })}
         </Container>
       </Devices>
       <Desktop>
         <ContainerTexts>
-          <p>{data.contact.telephoneNumber}</p>
-          <p>{data.contact.email}</p>
+          <Link to="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
+            {data.contact.email}
+          </Link>
         </ContainerTexts>
         <Container>
           {query.footerImg.nodes.map((node, key)=>{
             return (
-              <ImgContainer>
+              <ImgContainer key={key}>
                 <Link key={key} to="/" style={{ textDecoration: `none` }}>
                   <Img
                     fixed={query.footerImg.nodes[key].childImageSharp.fixed}

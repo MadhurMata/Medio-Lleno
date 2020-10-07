@@ -1,6 +1,6 @@
 module.exports.methodology = {
   title: "Nuestro método:",
-  text: "Hemos desarrollado una metodología de trabajo modular para adaptarnos con facilidad a las necesidadesde cada cliente optimizar el proceso y buscar la excalencia en cada paso.",
+  text: "Hemos desarrollado una metodología de trabajo modular para adaptarnos con facilidad a las necesidadesde cada cliente, optimizar el proceso y buscar la excalencia en cada paso.",
   subtitle: "Lo dividimos en 6 etapas",
   stages: [
     {
@@ -13,7 +13,7 @@ module.exports.methodology = {
     },
     {
       title: "03. Desarrollo:",
-      text: "Seguimos nuestro modelo para llegar a soluciones más creativas eficientes y originales.",
+      text: "Seguimos nuestro modelo para llegar a soluciones más creativas, eficientes y originales.",
     },
     {
       title: "04. Producción:",

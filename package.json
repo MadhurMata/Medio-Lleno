@@ -13,6 +13,7 @@
     "gatsby-plugin-anchor-links": "^1.1.1",
     "gatsby-plugin-emotion": "^4.3.10",
     "gatsby-plugin-fontawesome-css": "^1.0.0",
+    "gatsby-plugin-mailgo": "^0.9.18",
     "gatsby-plugin-manifest": "^2.4.21",
     "gatsby-plugin-offline": "^3.2.21",
     "gatsby-plugin-react-helmet": "^3.3.10",

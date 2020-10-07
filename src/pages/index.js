@@ -55,7 +55,7 @@ const MainMessage = styled.div`
   color: white;
   margin: 3rem 0 0 0;
      h1 {
-        line-height: 3.5rem;
+        line-height: 3.3rem;
         font-size: 2.9rem;
         font-weight: 700;
         margin: 0;
@@ -161,17 +161,17 @@ const IndexPage = () => {
       }
     }
   `)
-      console.log(query);
     return (
       <Layout>
+        <SEO title={"Medio Lleno"}/>
         <IndexWrapper id={"hey"} name={"hey"}>
           <Devices>
             <MainMessage>
               <h1>Bien</h1>
               <h1>hecho</h1>
               <h1>es mejor</h1>
-              <h1 style={{  lineHeight: "4.3rem;"}}>que bien</h1>
-              <h1 style={{  lineHeight: "5.3rem"}}>dicho.</h1>
+              <h1 style={{  lineHeight: "4.3rem"}}>que bien</h1>
+              <h1 style={{  lineHeight: "3.7rem"}}>dicho.</h1>
             </MainMessage>
             <div>
               <Wave></Wave>
