@@ -153,7 +153,7 @@ const Contact = () => {
             </Link>
           </div>
         </Desktop>
-        <Container style={{width: "100%", maxWidth: "500px"}}>
+        <Container style={{width: "100%", maxWidth: "470px"}}>
           <Img
             style={{ marginTop: "4rem", display:"flex", justifyContent: "flex-end", width: "100%", height: "auto" }}
             fluid={query.contactImg.nodes[0].childImageSharp.fluid}
