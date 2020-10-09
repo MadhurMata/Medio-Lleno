@@ -58,6 +58,7 @@ const Title = styled.h1`
   color: white;
   padding-top: 1rem;
   font-size: 1.4rem;
+  font-family: 'Futura-bold', Fallback, sans-serif;
   line-height: 1.3;
   font-weight: 550;
   

@@ -51,6 +51,7 @@ const DesktopWrapper = styled.div`
 
 const Title = styled.h1`
   color: white;
+  font-family: 'Futura-bold', Fallback, sans-serif;
   font-size 1.6rem;
   font-weight: 550;
   text-align: left;
@@ -76,6 +77,7 @@ width: 100%;
 `
 const Subtitle = styled.h1`
   color: white;
+  font-family: 'Futura-bold', Fallback, sans-serif;
   font-size 0.7rem;
   font-weight: 550;
   width: 100%;

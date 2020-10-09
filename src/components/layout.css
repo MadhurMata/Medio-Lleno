@@ -5,8 +5,7 @@
   src: url('../../static/fonts/FUTURA/Futura-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('../../static/fonts/FUTURA/Futura-Bold.woff2') format('woff2'), /* Super Modern Browsers */
   url('../../static/fonts/FUTURA/Futura-Bold.woff') format('woff'), /* Pretty Modern Browsers */
-  url('../../static/fonts/FUTURA/Futura-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
-  url('../../static/fonts/FUTURA/Futura-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+  url('../../static/fonts/FUTURA/Futura-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
 @font-face {
@@ -15,12 +14,11 @@
   src: url('../../static/fonts/FUTURA/FuturaBT-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
   url('../../static/fonts/FUTURA/FuturaBT-Light.woff2') format('woff2'), /* Super Modern Browsers */
   url('../../static/fonts/FUTURA/FuturaBT-Light.woff') format('woff'), /* Pretty Modern Browsers */
-  url('../../static/fonts/FUTURA/FuturaBT-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
-  url('../../static/fonts/FUTURA/FuturaBT-Light.svg#svgFontName') format('svg'); /* Legacy iOS */
+  url('../../static/fonts/FUTURA/FuturaBT-Light.ttf')  format('truetype'); /* Safari, Android, iOS */
 }
 
 html {
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -29,7 +27,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #13c1b5;
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
 }
 @media (min-width: 1800px) {
   body {
@@ -232,7 +230,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -262,7 +260,7 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -278,7 +276,7 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.62671rem;
@@ -294,7 +292,7 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -310,7 +308,7 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -326,7 +324,7 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -342,7 +340,7 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -618,7 +616,7 @@ tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
   border-radius: 3px;
-  font-family: 'Futura-light', Fallback, sans-serif;
+  font-family: Futura, Fallback, sans-serif;
 
   padding: 0;
   padding-top: 0.2em;

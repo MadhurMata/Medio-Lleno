@@ -91,9 +91,9 @@ const SubStageContainer2 = styled.div`
 
 const Title = styled.h1`
   color: white;
-   font-size: 1.4rem;
-  font-weight: 550;
-  
+  font-size: 1.4rem;
+  font-weight: 500;
+  font-family: 'Futura-bold', Fallback, sans-serif;
   @media only screen 
   and (min-device-width: 1000px) {
       font-size: 2.5rem;    
@@ -102,7 +102,8 @@ const Title = styled.h1`
 const Subtitle = styled.h1`
   color: white;
   font-size 0.8rem;
-  font-weight: 550;
+  font-family: 'Futura-bold', Fallback, sans-serif;
+  font-weight: 500;
   margin-bottom: 1rem;
   text-align: left;
   width: 100%;
