@@ -58,11 +58,13 @@ const ContainerTexts = styled.div`
 `
 
 const ImgContainer = styled.div`
-  margin-right: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 7rem;
 `
 
 const Footer = () => {
-  const mediaLinks  = ["ingo@mediolleno.com", "https://www.linkedin.com/company/medio-lleno"]
+  const mediaLinks  = ["info@mediolleno.es", "https://www.linkedin.com/company/medio-lleno"]
   const media = ["Email", "LinkedIn"]
   const query = useStaticQuery(graphql`
     query {
@@ -84,12 +86,12 @@ const Footer = () => {
       <Devices>
         <Container>
               <ImgContainer>
-                <Link to="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer">
+                <Link href="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer">
                   <Img
                     fixed={query.footerImg.nodes[1].childImageSharp.fixed}
                     alt={`${media[0]} logo`}/>
                 </Link>
-                <Link to={mediaLinks[1]} style={{ textDecoration: `none` }}>
+                <Link href={mediaLinks[1]} style={{ textDecoration: `none` }}>
                   <Img
                     fixed={query.footerImg.nodes[0].childImageSharp.fixed}
                     alt={`${media[1]} logo`}/>
@@ -99,22 +101,23 @@ const Footer = () => {
       </Devices>
       <Desktop>
         <ContainerTexts>
-          <Link to="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
+          <Link href="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer" style={{textDecoration:"none"}}>
             {data.contact.email}
           </Link>
         </ContainerTexts>
         <Container>
-          {query.footerImg.nodes.map((node, key)=>{
-            return (
-              <ImgContainer key={key}>
-                <Link key={key} to="/" style={{ textDecoration: `none` }}>
-                  <Img
-                    fixed={query.footerImg.nodes[key].childImageSharp.fixed}
-                    alt={`${media[key]} logo`}/>
-                </Link>
-              </ImgContainer>
-            )
-          })}
+          <ImgContainer>
+            <Link href="mailto:info@mediolleno.es" target="_blank" rel="noopener noreferrer">
+              <Img
+                fixed={query.footerImg.nodes[1].childImageSharp.fixed}
+                alt={`${media[0]} logo`}/>
+            </Link>
+            <Link href={mediaLinks[1]} style={{ textDecoration: `none` }}>
+              <Img
+                fixed={query.footerImg.nodes[0].childImageSharp.fixed}
+                alt={`${media[1]} logo`}/>
+            </Link>
+          </ImgContainer>
           <div id="ttt"></div>
         </Container>
       </Desktop>
