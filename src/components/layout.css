@@ -1,10 +1,16 @@
 @font-face {
   font-family: "Futura-light";
-  src: url("../../static/fonts/FUTURA/futura light bt.ttf")   format('truetype');
+  src: url("../../static/fonts/FUTURA/futura light bt.ttf") format('truetype'),
+  url("../../static/fonts/FUTURA/futura light bt.ttf") format('woff'),
+  url("../../static/fonts/FUTURA/futura light bt.ttf") format('truetype'),
+  url("../../static/fonts/FUTURA/futura light bt.ttf") format('svg');
 }
 @font-face {
   font-family: "Futura-bold";
-  src: url("../../static/fonts/FUTURA/Futura Bold font.ttf")   format('truetype');
+  src: url("../../static/fonts/FUTURA/Futura Bold font.ttf")   format('truetype'),
+  url("../../static/fonts/FUTURA/Futura Bold font.ttf") format('woff'),
+  url("../../static/fonts/FUTURA/Futura Bold font.ttf") format('truetype'),
+  url("../../static/fonts/FUTURA/Futura Bold font.ttf") format('svg');
 }
 
 html {
