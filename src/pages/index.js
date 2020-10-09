@@ -57,7 +57,8 @@ const MainMessage = styled.div`
      h1 {
         line-height: 3.3rem;
         font-size: 2.9rem;
-        font-weight: 700;
+        font-family: 'Futura-bold', Fallback, sans-serif;
+        font-weight: 500;
         margin: 0;
     } 
   
@@ -65,6 +66,7 @@ const MainMessage = styled.div`
   and (min-device-width: 1000px) {
   margin: 0 15%;
     h1 {
+      font-family: 'Futura-bold', Fallback, sans-serif;
       line-height: 4.8rem;
       font-size: 4.6rem;
       margin: 0;
